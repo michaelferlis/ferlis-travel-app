@@ -99,18 +99,20 @@ console.log('test');
     render() {
         return (
             <div>
-                <h2></h2>
+                <h2>{this.state.newTrip.name}</h2>
+
                 <TextField style={styles.text} label="Trip Name" type='text' value={this.state.newTrip.name} onChange={this.handleTripChangeFor('name')} />
+                
                 <pre>{JSON.stringify(this.props.reduxState.tripReducers)}</pre>
                 <pre>{JSON.stringify(this.props.reduxState.tripReducers.dayList)}</pre>
                 <h3>Add New Day to Trip</h3>
                 <Card style={styles.card}>
                     <form>
                         <TextField id="date"label="Date"type="date"defaultValue="2019-07-01"onChange={this.handleDayChangeFor('date')}/>
-                        <TextField style={styles.text} label="city" type='text' value={this.state.newDay.city} onChange={this.handleDayChangeFor('city')} />
-                        <TextField style={styles.text} label="travel" type='text' value={this.state.newDay.travel} onChange={this.handleDayChangeFor('travel')} />
-                        <TextField style={styles.text} label="hotel" type='text' value={this.state.newDay.hotel} onChange={this.handleDayChangeFor('hotel')} />
-                        <TextField style={styles.text} label="reservations" type='text' value={this.state.newDay.reservations} onChange={this.handleDayChangeFor('reservations')} />
+                        <TextField style={styles.text} label="City" type='text' value={this.state.newDay.city} onChange={this.handleDayChangeFor('city')} />
+                        <TextField style={styles.text} label="Travel" type='text' value={this.state.newDay.travel} onChange={this.handleDayChangeFor('travel')} />
+                        <TextField style={styles.text} label="Hotel" type='text' value={this.state.newDay.hotel} onChange={this.handleDayChangeFor('hotel')} />
+                        <TextField style={styles.text} label="Reservations" type='text' value={this.state.newDay.reservations} onChange={this.handleDayChangeFor('reservations')} />
                         <TextField style={styles.text} label="Daily Comments" type='text' value={this.state.newDay.dayComments} onChange={this.handleDayChangeFor('dayComments')} />
                         <Button style={styles.button} type='submit' variant="outlined" color="primary" onClick={this.addNewDay}>Add New Day</Button>
                         
@@ -136,9 +138,9 @@ console.log('test');
                 </Table>
 
                 <TextField style={styles.text} label="Trip Comments" type='text' value={this.state.newTrip.tripComments} onChange={this.handleTripChangeFor('tripComments')} />
-
+                
                 <p>{this.state.newTrip.tripComments}</p>
-                <Button style={styles.button} type='submit' variant="outlined" color="primary" onClick={this.addTrip}>Add New Trip</Button>
+                <Button style={styles.button} type='submit' variant="outlined" color="primary" onClick={this.addTrip}>Save Trip</Button>
             </div>
         );
     }

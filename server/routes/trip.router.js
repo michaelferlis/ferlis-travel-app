@@ -7,14 +7,17 @@ const userStrategy = require('../strategies/user.strategy');
 
 const router = express.Router();
 router.get('/', rejectUnauthenticated,(req, res) => {
-    const queryText = 'SELECT * FROM "trip_days"';
+    const queryText = `SELECT * FROM "trips" JOIN "trip_days"
+    ON "trip_days"."trip_id" = "trips"."id";`
     pool.query(queryText)
       .then((result) => { res.send(result.rows); })
       .catch((err) => {
-        console.log('Error completing SELECT days query', err);
+        console.log('Error completing SELECT trips query', err);
         res.sendStatus(500);
       });
   });
+
+  
 
   router.post('/', rejectUnauthenticated, (req, res) => {
     const newTrip = req.body;
