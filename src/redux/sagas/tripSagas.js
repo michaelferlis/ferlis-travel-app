@@ -9,9 +9,9 @@ import axios from 'axios'
 
 
 
-  function* fetchDays (action) {
+  function* fetchTrips (action) {
     try {
-        const dayResponse = yield axios.get('/api/newday');
+        const dayResponse = yield axios.get('/api/newtrip');
         yield put({type: 'SET_DAYS', payload: dayResponse.data})
     } catch(error){
         console.log('error fetching plants', error);
@@ -29,7 +29,7 @@ import axios from 'axios'
 
 
 function* registrationSaga() {
-    yield takeLatest('FETCH_DAYS', fetchDays);
+    yield takeLatest('FETCH_TRIPS', fetchTrips);
     yield takeLatest('ADD_TRIP', addTrip);
   }
   
