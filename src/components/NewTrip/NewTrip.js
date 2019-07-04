@@ -113,7 +113,7 @@ console.log('test');
                         <TextField style={styles.text} label="reservations" type='text' value={this.state.newDay.reservations} onChange={this.handleDayChangeFor('reservations')} />
                         <TextField style={styles.text} label="Daily Comments" type='text' value={this.state.newDay.dayComments} onChange={this.handleDayChangeFor('dayComments')} />
                         <Button style={styles.button} type='submit' variant="outlined" color="primary" onClick={this.addNewDay}>Add New Day</Button>
-                        <Button style={styles.button} type='submit' variant="outlined" color="primary" onClick={this.addTrip}>Add New Trip</Button>
+                        
 
                     </form>
                 </Card>
@@ -138,6 +138,7 @@ console.log('test');
                 <TextField style={styles.text} label="Trip Comments" type='text' value={this.state.newTrip.tripComments} onChange={this.handleTripChangeFor('tripComments')} />
 
                 <p>{this.state.newTrip.tripComments}</p>
+                <Button style={styles.button} type='submit' variant="outlined" color="primary" onClick={this.addTrip}>Add New Trip</Button>
             </div>
         );
     }
