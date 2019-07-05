@@ -73,6 +73,7 @@ class NewTrip extends Component {
             }
         });
         this.props.history.push(`/home`)
+        this.props.dispatch({type: 'FETCH_TRIP_NAMES'})
     }
 
     handleDayChangeFor = (propertyName) => event => {

@@ -14,12 +14,18 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
 import TripItem from '../TripItem/TripItem'
+import TripNames from '../TripNames/TripNames'
 
 
 
 // sgMail.send(msg);
 
 class Dashboard extends Component {
+  
+
+  componentDidMount () {
+    this.props.dispatch({type: 'FETCH_TRIP_NAMES'})
+  }
     getNew=()=> {
         this.props.history.push(`/new`)
       }
@@ -32,14 +38,16 @@ class Dashboard extends Component {
       getPast=()=> {
         this.props.history.push(`/past`)
       }
+
+      
       // sendEmail=()=> {
       //   console.log('send email working');
         
       //   sgMail.send(msg);
       // }
-      get=()=> {
-        this.props.dispatch({type: 'FETCH_TRIPS'})
-      }
+      // get=()=> {
+      //   this.props.dispatch({type: 'FETCH_TRIPS'})
+      // }
       
   render() {
     return (
@@ -48,7 +56,7 @@ class Dashboard extends Component {
           <button onClick={this.getCurrent}>Current Trip</button>
           <button onClick={this.getDay}>Current Day</button>
           <button onClick={this.getPast}>Past Trip</button>
-          {/* <button onClick={this.get}>Trip</button> */}
+          <button onClick={this.get}>Trip</button>
 
          <h2>Upcoming Trips</h2>
          <ul>
@@ -56,7 +64,8 @@ class Dashboard extends Component {
          <pre>{JSON.stringify(this.props.reduxState.tripReducers)}</pre>
          <pre>{JSON.stringify(this.props.reduxState.tripReducers.tripNames)}</pre>
              {/* <li>{this.props.reduxState.addDay.addDay}</li> */}
-             {this.props.reduxState.tripReducers.tripListAll.map(trip => <TripItem history={this.props.history} key={trip.id} trip={trip} />)}
+             {/* {this.props.reduxState.tripReducers.tripListAll.map(tripList => <TripItem history={this.props.history} key={tripList.id} tripList={tripList} />)} */}
+             {this.props.reduxState.tripReducers.tripNames.map(tripNames => <TripNames history={this.props.history} key={tripNames.id} tripNames={tripNames} />)}
              
          </ul>
           

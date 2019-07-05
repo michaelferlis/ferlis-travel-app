@@ -15,8 +15,22 @@ class TripItem extends Component {
     render() {
         return (
             <div>
-                <br />
-               <Button type='submit' variant="outlined" color="primary" onClick={this.handleClick}>{this.props.trip.trip_name}</Button>
+               
+                <TableRow >
+                    <TableCell>{this.props.tripList.day}</TableCell>
+                    <TableCell>{this.props.tripList.city}</TableCell>
+                    <TableCell>{this.props.tripList.travel_information}</TableCell>
+                    <TableCell>{this.props.tripList.hotel}</TableCell>
+                    <TableCell>{this.props.tripList.restaurant_reservations}</TableCell>
+                    <TableCell>{this.props.tripList.day_comments}</TableCell>
+                    
+                    {/* <TableCell>
+                        <Button size="small" onClick={this.handleDelete}>
+                            Delete
+                        </Button>
+                    </TableCell> */}
+                </TableRow>
+               {/* <Button type='submit' variant="outlined" color="primary" onClick={this.handleClick}>{this.props.tripList.trip_name}</Button> */}
                
                 
                 
