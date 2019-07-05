@@ -29,7 +29,7 @@ const addTripName = (state = [], action) => {
 const tripList = (state = [], action) => {
   if (action.type === 'SET_DAYS'){
       console.log(`The day was ${action.payload}`);
-      return [...state, action.payload];
+      return action.payload;
   } 
 
   return state;

@@ -17,6 +17,15 @@ router.get('/', rejectUnauthenticated,(req, res) => {
       });
   });
 
+//   router.get('/current/:id', async (req, res) => {
+//     pool.query('SELECT * FROM "trips" WHERE "id"=$1 LIMIT 1;', [req.params.id])
+//         .then(result => res.send(result.rows[0]))
+//         .catch(error => {
+//             console.log('error in SELECT query', error);
+//             res.sendStatus(500);
+//         });
+// });
+
   
 
   router.post('/', rejectUnauthenticated, (req, res) => {
