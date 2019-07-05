@@ -36,13 +36,28 @@ import axios from 'axios'
       console.log('error with posting a trip:', error);
     }
   }
-  
+  function* fetchTripDetails (action) {
+    try {
+        const tripResponse = yield axios.get(`/api/details/${action.payload}`);
+        console.log('est', action);
+        yield put({type: 'SET_ONE_TRIP', payload: tripResponse.data})
+    } catch(error){
+        console.log('error fetching trips', error);
+    }
+    
+  }
+//   function* fetchTripDetails(action) {
+//      axios.get(`/api/details/${action.payload}`);
+//      yield put({type: 'SET_ONE_TRIP', payload: dayResponse.data})
+   
+// }
 
 
 function* registrationSaga() {
     yield takeLatest('FETCH_TRIPS', fetchTrips);
     yield takeLatest('ADD_TRIP', addTrip);
     yield takeLatest('FETCH_TRIP_NAMES', fetchTripNames);
+    yield takeLatest('FETCH_TRIP_DETAILS', fetchTripDetails);
   }
   
   export default registrationSaga;

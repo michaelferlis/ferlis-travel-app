@@ -25,7 +25,7 @@ class CurrentTrip extends Component {
   render() {
     return (
       <div>
-        
+         <pre>{JSON.stringify(this.props.reduxState.tripReducers.oneTrip)}</pre>
          {/* <Table>
                     <TableHead>
 
