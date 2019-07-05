@@ -20,7 +20,6 @@ const styles = {text: {margin: 20},button: {margin: 20,width: 200, },
 }
 
 class NewTrip extends Component {
-
     state = {
         newDay: {
             date: '',
@@ -36,14 +35,14 @@ class NewTrip extends Component {
         }
     }
 
-    componentDidMount() {
-console.log('test');
+//     componentDidMount() {
+// console.log('test');
 
-        this.props.dispatch({
-            type: 'FETCH_DAYS'
+//         this.props.dispatch({
+//             type: 'FETCH_DAYS'
 
-    })
-}
+//     })
+// }
 
     addNewDay = event => {
         event.preventDefault();

@@ -8,7 +8,7 @@ const userStrategy = require('../strategies/user.strategy');
 const router = express.Router();
 router.get('/', rejectUnauthenticated,(req, res) => {
     const queryText = `SELECT * FROM "trips" JOIN "trip_days"
-    ON "trip_days"."trip_id" = "trips"."id";`
+    ON "trip_days"."trip_id" = "trips"."id" ORDER BY "day";`
     pool.query(queryText)
       .then((result) => { res.send(result.rows); })
       .catch((err) => {
@@ -16,6 +16,16 @@ router.get('/', rejectUnauthenticated,(req, res) => {
         res.sendStatus(500);
       });
   });
+
+  // router.get('/', rejectUnauthenticated,(req, res) => {
+  //   const queryText = `SELECT * FROM "trips";`
+  //   pool.query(queryText)
+  //     .then((result) => { res.send(result.rows); })
+  //     .catch((err) => {
+  //       console.log('Error completing SELECT trips query', err);
+  //       res.sendStatus(500);
+  //     });
+  // });
 
 //   router.get('/current/:id', async (req, res) => {
 //     pool.query('SELECT * FROM "trips" WHERE "id"=$1 LIMIT 1;', [req.params.id])

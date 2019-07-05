@@ -26,7 +26,16 @@ const addTripName = (state = [], action) => {
     return state;
 }
 
-const tripList = (state = [], action) => {
+const tripNames = (state = [], action) => {
+  if (action.type === 'SET_TRIP_NAMES'){
+      console.log(`The day was ${action.payload}`);
+      return action.payload;
+  } 
+
+  return state;
+}
+
+const tripListAll = (state = [], action) => {
   if (action.type === 'SET_DAYS'){
       console.log(`The day was ${action.payload}`);
       return action.payload;
@@ -34,6 +43,15 @@ const tripList = (state = [], action) => {
 
   return state;
 }
+
+// const oneTrip = (state = {}, action) => {
+//   switch (action.type) {
+//     case 'SET_ONE_TRIP':
+//       return action.payload 
+//     default:
+//       return state;
+//   }
+// }; 
 
 
 // const dayList = (state = [], action) => {
@@ -49,7 +67,9 @@ const tripList = (state = [], action) => {
 export default combineReducers({
     addDay,
     addTripName,
-    tripList,
+    tripListAll,
+    // oneTrip,
+    tripNames,
   });
   
   

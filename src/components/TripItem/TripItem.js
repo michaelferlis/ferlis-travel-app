@@ -7,14 +7,19 @@ import { connect } from 'react-redux'
 
 
 class TripItem extends Component {
+    handleClick = () =>{
+        this.props.history.push(`/current`)
+    }
 
 
     render() {
         return (
             <div>
-                <li>
-                {this.props.trip.trip_name}
-                </li>
+                <br />
+               <Button type='submit' variant="outlined" color="primary" onClick={this.handleClick}>{this.props.trip.trip_name}</Button>
+               
+                
+                
               
             </div>
         )

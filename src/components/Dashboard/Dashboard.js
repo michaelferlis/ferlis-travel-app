@@ -52,10 +52,12 @@ class Dashboard extends Component {
 
          <h2>Upcoming Trips</h2>
          <ul>
-         <pre>{JSON.stringify(this.props.reduxState.tripReducers.tripList)}</pre>
+         <pre>{JSON.stringify(this.props.reduxState.tripReducers.tripListAll)}</pre>
          <pre>{JSON.stringify(this.props.reduxState.tripReducers)}</pre>
+         <pre>{JSON.stringify(this.props.reduxState.tripReducers.tripNames)}</pre>
              {/* <li>{this.props.reduxState.addDay.addDay}</li> */}
-             {this.props.reduxState.tripReducers.tripList.map(trip => <TripItem history={this.props.history} key={trip.id} trip={trip} />)}
+             {this.props.reduxState.tripReducers.tripListAll.map(trip => <TripItem history={this.props.history} key={trip.id} trip={trip} />)}
+             
          </ul>
           
       </div>

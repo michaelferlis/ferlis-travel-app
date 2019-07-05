@@ -29,6 +29,7 @@ class App extends Component {
   componentDidMount () {
     this.props.dispatch({type: 'FETCH_USER'})
     this.props.dispatch({type: 'FETCH_TRIPS'})
+    this.props.dispatch({type: 'FETCH_TRIP_NAMES'})
   }
 
   render() {

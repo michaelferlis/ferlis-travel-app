@@ -18,6 +18,16 @@ import axios from 'axios'
     }
     
   }
+
+  function* fetchTripNames (action) {
+    try {
+        const dayResponse = yield axios.get('/api/name');
+        yield put({type: 'SET_TRIP_NAMES', payload: dayResponse.data})
+    } catch(error){
+        console.log('error fetching plants', error);
+    }
+    
+  }
   function* addTrip(action) {
     try {
       yield axios.post('/api/newtrip', action.payload);
@@ -26,11 +36,13 @@ import axios from 'axios'
       console.log('error with posting a trip:', error);
     }
   }
+  
 
 
 function* registrationSaga() {
     yield takeLatest('FETCH_TRIPS', fetchTrips);
     yield takeLatest('ADD_TRIP', addTrip);
+    yield takeLatest('FETCH_TRIP_NAMES', fetchTripNames);
   }
   
   export default registrationSaga;
