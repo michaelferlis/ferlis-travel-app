@@ -30,9 +30,9 @@ class CurrentTrip extends Component {
                         <TableRow>
                             <TableCell>Date</TableCell>
                             <TableCell>City</TableCell>
-                            <TableCell>Travel Information</TableCell>
+                            {/* <TableCell>Travel Information</TableCell>
                             <TableCell>Hotel Information</TableCell>
-                            <TableCell>Restaurant Reservations</TableCell>
+                            <TableCell>Restaurant Reservations</TableCell> */}
                             <TableCell>Comments</TableCell>
                         </TableRow>
 
