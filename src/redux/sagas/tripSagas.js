@@ -24,7 +24,7 @@ import axios from 'axios'
         const dayResponse = yield axios.get('/api/name');
         yield put({type: 'SET_TRIP_NAMES', payload: dayResponse.data})
     } catch(error){
-        console.log('error fetching plants', error);
+        console.log('error fetching trips', error);
     }
     
   }
@@ -39,8 +39,9 @@ import axios from 'axios'
   function* fetchTripDetails (action) {
     try {
         const tripResponse = yield axios.get(`/api/details/${action.payload}`);
-        console.log('est', action);
-        yield put({type: 'SET_ONE_TRIP', payload: tripResponse.data})
+        console.log('trip response',tripResponse.data)
+        yield put({type: 'SET_SINGLE_TRIP', payload: tripResponse.data})
+        
     } catch(error){
         console.log('error fetching trips', error);
     }

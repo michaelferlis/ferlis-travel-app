@@ -1,12 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+
 import { createStore, combineReducers, applyMiddleware } from 'redux';
-import { Provider } from 'react-redux';
-import logger from 'redux-logger'
+
 // Import saga middleware
-import createSagaMiddleware from 'redux-saga';
-import { takeEvery, put } from 'redux-saga/effects'
-import axios from 'axios'
+
 
 const addDay = (state = [], action) => {
     if (action.type === 'ADD_DAY'){
@@ -44,14 +40,23 @@ const tripListAll = (state = [], action) => {
   return state;
 }
 
-const oneTrip = (state = [], action) => {
-    if (action.type === 'SET_ONE_TRIP'){
-        console.log(`The day was ${action.payload}`);
+// const oneSTrip = (state = [], action) => {
+//     if (action.type === 'SET_SINGLE_TRIP'){
+//         console.log(`TRIPPPPPPPP ${action.payload}`);
+//         return action.payload;
+//     } 
+  
+//     return state;
+//   }
+
+  const singleTrip = (state = [], action) => {
+    if (action.type === 'SET_SINGLE_TRIP'){
+        console.log(`The trip was ${action.payload}`);
         return action.payload;
     } 
-  
+
     return state;
-  }
+}
 
 // const oneTrip = (state = {}, action) => {
 //   switch (action.type) {
@@ -77,8 +82,9 @@ export default combineReducers({
     addDay,
     addTripName,
     tripListAll,
-    oneTrip,
+    // oneSTrip,
     tripNames,
+    singleTrip,
   });
   
   

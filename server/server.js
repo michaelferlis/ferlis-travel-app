@@ -32,6 +32,7 @@ app.use('/api/details', TripDetailsRouter);
 
 
 
+
 // Serve static files
 app.use(express.static('build'));
 

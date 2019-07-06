@@ -10,7 +10,6 @@ class TripItem extends Component {
     getDetails=(action)=> {
         this.props.dispatch({type: 'FETCH_TRIP_DETAILS',payload: this.props.tripNames.id})
         this.props.history.push(`/current`)
-        console.log('test trip item');
         
       }
 

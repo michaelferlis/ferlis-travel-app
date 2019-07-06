@@ -15,15 +15,6 @@ const router = express.Router();
       });
   });
 
-  router.get('api/details', rejectUnauthenticated, (req, res) => {
-    const queryText = 'SELECT * FROM "trip_days";';
-    pool.query(queryText)
-      .then((result) => { res.send(result.rows); })
-      .catch((err) => {
-        console.log('Error completing SELECT trip query', err);
-        res.sendStatus(500);
-      });
-  });
 
 
   

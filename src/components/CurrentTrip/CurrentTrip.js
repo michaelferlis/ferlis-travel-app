@@ -14,7 +14,7 @@ import Card from '@material-ui/core/Card';
 class CurrentTrip extends Component {
 
   componentDidMount() {
-    console.log('test');
+    // console.log('test');
     
     
   }
@@ -25,27 +25,8 @@ class CurrentTrip extends Component {
   render() {
     return (
       <div>
-         <pre>{JSON.stringify(this.props.reduxState.tripReducers.oneTrip)}</pre>
-         {/* <Table>
-                    <TableHead>
-
-                        <TableRow>
-                            <TableCell>Date</TableCell>
-                            <TableCell>City</TableCell>
-                            <TableCell>Travel Information</TableCell>
-                            <TableCell>Hotel Information</TableCell>
-                            <TableCell>Restaurant Reservations</TableCell>
-                            <TableCell>Comments</TableCell>
-                        </TableRow>
-
-                    </TableHead>
-                    <TableBody>
-                    {this.props.reduxState.tripReducers.tripListAll.map(tripList => <TripItem history={this.props.history} key={tripList.id} tripList={tripList} />)}
-                    </TableBody>
-                </Table> */}
-         
-        {/* <pre>{JSON.stringify(this.props.reduxState.tripReducers.tripList)}</pre> */}
-<button onClick={this.getDashboard}>Dashboard</button>
+         <pre>{JSON.stringify(this.props.reduxState.tripReducers.singleTrip)}</pre>
+      
 
 
 
