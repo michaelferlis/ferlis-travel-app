@@ -1,9 +1,5 @@
 
-import { createStore, combineReducers, applyMiddleware } from 'redux';
-import { Provider } from 'react-redux';
-import logger from 'redux-logger'
-// Import saga middleware
-import createSagaMiddleware from 'redux-saga';
+
 import { takeLatest, put } from 'redux-saga/effects'
 import axios from 'axios'
 

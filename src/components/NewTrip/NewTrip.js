@@ -35,14 +35,6 @@ class NewTrip extends Component {
         }
     }
 
-//     componentDidMount() {
-// console.log('test');
-
-//         this.props.dispatch({
-//             type: 'FETCH_DAYS'
-
-//     })
-// }
 
     addNewDay = event => {
         event.preventDefault();

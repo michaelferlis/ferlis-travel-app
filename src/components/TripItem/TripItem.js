@@ -24,13 +24,13 @@ class TripItem extends Component {
                     <TableCell>{this.props.tripList.restaurant_reservations}</TableCell>
                     <TableCell>{this.props.tripList.day_comments}</TableCell>
                     
-                    {/* <TableCell>
+                    <TableCell>
                         <Button size="small" onClick={this.handleDelete}>
                             Delete
                         </Button>
-                    </TableCell> */}
+                    </TableCell>
                 </TableRow>
-               {/* <Button type='submit' variant="outlined" color="primary" onClick={this.handleClick}>{this.props.tripList.trip_name}</Button> */}
+               <Button type='submit' variant="outlined" color="primary" onClick={this.handleClick}>{this.props.tripList.trip_name}</Button>
                
                 
                 

@@ -1,5 +1,5 @@
 
-import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { combineReducers } from 'redux';
 
 // Import saga middleware
 
@@ -40,14 +40,6 @@ const tripListAll = (state = [], action) => {
   return state;
 }
 
-// const oneSTrip = (state = [], action) => {
-//     if (action.type === 'SET_SINGLE_TRIP'){
-//         console.log(`TRIPPPPPPPP ${action.payload}`);
-//         return action.payload;
-//     } 
-  
-//     return state;
-//   }
 
   const singleTrip = (state = [], action) => {
     if (action.type === 'SET_SINGLE_TRIP'){
@@ -57,25 +49,6 @@ const tripListAll = (state = [], action) => {
 
     return state;
 }
-
-// const oneTrip = (state = {}, action) => {
-//   switch (action.type) {
-//     case 'SET_ONE_TRIP':
-//       return action.payload 
-//     default:
-//       return state;
-//   }
-// }; 
-
-
-// const dayList = (state = [], action) => {
-//     switch (action.type) {
-//       case 'SET_DAYS':
-//         return action.payload
-//       default:
-//         return state;
-//     }
-//   };
 
 
 export default combineReducers({
