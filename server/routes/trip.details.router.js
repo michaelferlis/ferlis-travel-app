@@ -18,7 +18,7 @@ const router = express.Router();
   // });
 
   router.get('/:id', (req, res) => {
-    pool.query('SELECT * FROM "trip_days" WHERE "trip_id"=$1;', [req.params.id])
+    pool.query('SELECT * FROM "trip_days" WHERE "trip_id"=$1 ORDER BY "day";', [req.params.id])
     
         .then(result => res.send(result.rows))
         .catch(error => {

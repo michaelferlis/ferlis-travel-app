@@ -55,7 +55,6 @@ export default combineReducers({
     addDay,
     addTripName,
     tripListAll,
-    // oneSTrip,
     tripNames,
     singleTrip,
   });

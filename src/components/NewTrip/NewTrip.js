@@ -91,12 +91,13 @@ class NewTrip extends Component {
     render() {
         return (
             <div>
+                <h2>Where to?</h2>
                 <h2>{this.state.newTrip.name}</h2>
 
                 <TextField style={styles.text} label="Trip Name" type='text' value={this.state.newTrip.name} onChange={this.handleTripChangeFor('name')} />
                 
-                <pre>{JSON.stringify(this.props.reduxState.tripReducers)}</pre>
-                <pre>{JSON.stringify(this.props.reduxState.tripReducers.dayList)}</pre>
+                {/* <pre>{JSON.stringify(this.props.reduxState.tripReducers)}</pre>
+                <pre>{JSON.stringify(this.props.reduxState.tripReducers.dayList)}</pre> */}
                 <h3>Add New Day to Trip</h3>
                 <Card style={styles.card}>
                     <form>

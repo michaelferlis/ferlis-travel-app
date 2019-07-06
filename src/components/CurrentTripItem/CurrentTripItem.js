@@ -8,33 +8,34 @@ import { connect } from 'react-redux'
 
 class TripItem extends Component {
     handleClick = () =>{
-        this.props.history.push(`/current`)
+        console.log('button');
+        
     }
 
 
     render() {
         return (
-            <div>
+            
                
                 <TableRow >
-                    <TableCell>{this.props.singleTrip.day}</TableCell>
+                    <TableCell>{this.props.singleTrip.day.substring(5, 7) + "/" + this.props.singleTrip.day.substring(8, 10) + "/" + this.props.singleTrip.day.substring(0, 4)}</TableCell>
                     <TableCell>{this.props.singleTrip.city}</TableCell>
                     <TableCell>{this.props.singleTrip.travel_information}</TableCell>
                     <TableCell>{this.props.singleTrip.hotel}</TableCell>
                     <TableCell>{this.props.singleTrip.restaurant_reservations}</TableCell>
                     <TableCell>{this.props.singleTrip.day_comments}</TableCell>
                 <TableCell>
-                        <Button size="small" onClick={this.handleDelete}>
+                        <Button size="small" onClick={this.handleClick}>
                              Delete
                          </Button>
                     </TableCell> 
                 </TableRow>
-               {/* <Button type='submit' variant="outlined" color="primary" onClick={this.handleClick}>{this.props.tripList.trip_name}</Button> */}
+          
                
                 
                 
               
-            </div>
+           
         )
     }
 }

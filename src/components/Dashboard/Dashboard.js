@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
-
+import Button from '@material-ui/core/Button';
 import TripNames from '../TripNames/TripNames'
 
 
@@ -40,17 +40,17 @@ class Dashboard extends Component {
   render() {
     return (
       <div>
-          <button onClick={this.getNew}>New Trip</button>
-          <button onClick={this.getCurrent}>Current Trip</button>
-          <button onClick={this.getDay}>Current Day</button>
-          <button onClick={this.getPast}>Past Trip</button>
-          <button onClick={this.get}>Trip</button>
+        <Button type='submit' variant="outlined" color="primary" onClick={this.getNew}>New Trip</Button>
+          {/* <button onClick={this.getNew}>New Trip</button> */}
+          
+          {/* <button onClick={this.getPast}>Past Trip</button> */}
+          
 
          <h2>Upcoming Trips</h2>
          <ul>
-         <pre>{JSON.stringify(this.props.reduxState.tripReducers.tripListAll)}</pre>
+         {/* <pre>{JSON.stringify(this.props.reduxState.tripReducers.tripListAll)}</pre>
          <pre>{JSON.stringify(this.props.reduxState.tripReducers)}</pre>
-         <pre>{JSON.stringify(this.props.reduxState.tripReducers.tripNames)}</pre>
+         <pre>{JSON.stringify(this.props.reduxState.tripReducers.tripNames)}</pre> */}
              {/* <li>{this.props.reduxState.addDay.addDay}</li> */}
              {/* {this.props.reduxState.tripReducers.tripListAll.map(tripList => <TripItem history={this.props.history} key={tripList.id} tripList={tripList} />)} */}
              {this.props.reduxState.tripReducers.tripNames.map(tripNames => <TripNames history={this.props.history} key={tripNames.id} tripNames={tripNames} />)}

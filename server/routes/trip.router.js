@@ -17,24 +17,6 @@ router.get('/', rejectUnauthenticated,(req, res) => {
       });
   });
 
-  // router.get('/', rejectUnauthenticated,(req, res) => {
-  //   const queryText = `SELECT * FROM "trips";`
-  //   pool.query(queryText)
-  //     .then((result) => { res.send(result.rows); })
-  //     .catch((err) => {
-  //       console.log('Error completing SELECT trips query', err);
-  //       res.sendStatus(500);
-  //     });
-  // });
-
-//   router.get('/current/:id', async (req, res) => {
-//     pool.query('SELECT * FROM "trips" WHERE "id"=$1 LIMIT 1;', [req.params.id])
-//         .then(result => res.send(result.rows[0]))
-//         .catch(error => {
-//             console.log('error in SELECT query', error);
-//             res.sendStatus(500);
-//         });
-// });
 
   
 
