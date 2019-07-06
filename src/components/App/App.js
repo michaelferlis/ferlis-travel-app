@@ -28,8 +28,8 @@ import PastTrip from '../PastTrip/PastTrip';
 class App extends Component {
   componentDidMount () {
     this.props.dispatch({type: 'FETCH_USER'})
-    this.props.dispatch({type: 'FETCH_TRIPS'})
-    this.props.dispatch({type: 'FETCH_TRIP_NAMES'})
+    // this.props.dispatch({type: 'FETCH_TRIPS'})
+    // this.props.dispatch({type: 'FETCH_TRIP_NAMES'})
   }
 
   render() {
@@ -65,11 +65,11 @@ class App extends Component {
               path="/info"
               component={InfoPage}
             />
-             <ProtectedRoute
+             {/* <ProtectedRoute
               exact
               path="/dashboard"
               component={Dashboard}
-            />
+            /> */}
             <ProtectedRoute
               exact
               path="/new"

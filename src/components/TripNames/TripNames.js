@@ -9,9 +9,15 @@ import { connect } from 'react-redux'
 class TripItem extends Component {
     getDetails=(action)=> {
         this.props.dispatch({type: 'FETCH_TRIP_DETAILS',payload: this.props.tripNames.id})
-        this.props.history.push(`/current`)
-        
+        // this.props.history.push(`/current`)
+        this.props.history.push({
+            pathname: '/current',
+            state: this.props.tripNames,
+        })
       }
+
+      
+    
 
 
     render() {

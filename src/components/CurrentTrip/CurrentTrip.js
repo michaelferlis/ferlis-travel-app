@@ -25,11 +25,13 @@ class CurrentTrip extends Component {
   render() {
     return (
       <div>
-         <pre>{JSON.stringify(this.props.reduxState.tripReducers.singleTrip)}</pre>
+         <h2>{this.props.location.state && this.props.location.state.trip_name }</h2>
+         <pre>{JSON.stringify(this.props.reduxState.tripReducers.singleTrip, null, 2)}</pre>
+         {/* <pre>{JSON.stringify(this.props.location.state.trip_name, null, 2)}</pre> */}
+         <h4>{this.props.location.state && this.props.location.state.trip_comments }</h4>
       
 
-
-
+      
       </div>
     );
   }
