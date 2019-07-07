@@ -63,7 +63,7 @@ class Dashboard extends Component {
           {/* <button onClick={this.getPast}>Past Trip</button> */}
           
 
-         <h2>Upcoming Trips</h2>
+         <h2>Your Trips</h2>
          <ul>
          {/* <pre>{JSON.stringify(this.props.reduxState.tripReducers.tripListAll)}</pre>
          <pre>{JSON.stringify(this.props.reduxState.tripReducers)}</pre>
