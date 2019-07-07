@@ -22,7 +22,7 @@ import CurrentDay from '../CurrentDay/CurrentDay';
 import PastTrip from '../PastTrip/PastTrip';
 
 
-// import './App.css';
+import './App.css';
 
 class App extends Component {
   componentDidMount () {

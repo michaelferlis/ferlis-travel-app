@@ -1,10 +1,11 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0px;
+    margin: 10px;
+    /* background-image: url("world.jpg"); */
 }
 
 .alert {
-    background-color: #ff4545;
+    background-color: #b343439d;
     margin: 50px;
 }
 

@@ -8,6 +8,7 @@ import Table from '@material-ui/core/Table';
 import TableHead from '@material-ui/core/TableHead';
 import TableCell from '@material-ui/core/TableCell'
 import TableRow from '@material-ui/core/TableRow'
+import Grid from '@material-ui/core/Grid'
 
 class CurrentTrip extends Component {
 
@@ -24,27 +25,29 @@ class CurrentTrip extends Component {
     return (
       <div>
          <h2>{this.props.location.state && this.props.location.state.trip_name }</h2>
-         <Table>
+       
+         {/* <Table>
                     <TableHead>
 
                         <TableRow>
-                            <TableCell></TableCell>
+                            
                             <TableCell>Date</TableCell>
-                            {/* <TableCell>Travel Information</TableCell>
-                            <TableCell>Hotel Information</TableCell>
-                            <TableCell>Restaurant Reservations</TableCell> */}
+                          
                             <TableCell>City</TableCell>
                             <TableCell>Comments</TableCell>
                         </TableRow>
 
                     </TableHead>
-                    <TableBody>
+                    <TableBody> */}
+                    <>
                         {this.props.reduxState.tripReducers.singleTrip.map(singleTrip => <CurrentTripItem history={this.props.history} key={singleTrip.date} singleTrip={singleTrip} />)}
-                    </TableBody>
-                </Table>
+                    </>
+                    {/* </TableBody>
+                </Table> */}
          {/* <pre>{JSON.stringify(this.props.reduxState.tripReducers.singleTrip, null, 2)}</pre> */}
          {/* <pre>{JSON.stringify(this.props.location.state.trip_name, null, 2)}</pre> */}
-         <h4>{this.props.location.state && this.props.location.state.trip_comments }</h4>
+         <h4>Trip Comments</h4>         
+         <h5>{this.props.location.state && this.props.location.state.trip_comments }</h5>
       
 
       

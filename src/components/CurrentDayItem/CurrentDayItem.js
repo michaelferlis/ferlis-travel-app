@@ -7,7 +7,14 @@ import TextField from '@material-ui/core/TextField';
 
 
 
-
+const styles = {text: {size: '8px' },
+    comments: {
+        width: '1000px',
+        margin: '5px',
+        padding: '5px',
+        
+    }
+}
 
 
 
@@ -24,6 +31,25 @@ class CurrentDayItem extends Component {
         }
     }
  
+    componentDidMount () {
+        this.setStateData()
+        
+
+    }
+
+    setStateData = () => {
+        this.props.singleDay &&
+            this.setState({
+                date: this.props.singleDay.day,
+                city: this.props.singleDay.city,
+                travel: this.props.singleDay.travel_information,
+                hotel: this.props.singleDay.hotel,
+                reservations: this.props.singleDay.restaurant_reservations,
+                dayComments: this.props.singleDay.day_comments,
+               
+            })
+    }
+
     handleClickDelete = () =>{
         console.log('button');
         this.props.dispatch({
@@ -39,8 +65,8 @@ class CurrentDayItem extends Component {
         return (
             
                <div>
-                   
-                   
+                   <p></p>
+                   <pre>{JSON.stringify(this.state)}</pre>
                    <h4>Date</h4>
                    <TextField value={this.props.singleDay.day.substring(5, 7) + "/" + this.props.singleDay.day.substring(8, 10) + "/" + this.props.singleDay.day.substring(0, 4)}></TextField>
                    <br />
@@ -57,7 +83,7 @@ class CurrentDayItem extends Component {
                     <TextField value={this.props.singleDay.restaurant_reservations}></TextField>
                     <br />
                     <h4>Daily Comments</h4>
-                    <TextField value={this.props.singleDay.day_comments}></TextField>
+                    <TextField style={styles.comments}value={this.props.singleDay.day_comments}></TextField>
 
                     <br />
                     <br />

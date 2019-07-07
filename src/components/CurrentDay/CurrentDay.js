@@ -18,7 +18,7 @@ class CurrentDay extends Component {
          
          <p>{this.props.reduxState.tripReducers.singleDay.map(singleDay => <CurrentDayItem history={this.props.history} key={singleDay.id} singleDay={singleDay} />)}</p>
          {/* <pre>{JSON.stringify(this.props.reduxState.tripReducers.singleDay, null, 2)}</pre> */}
-         <pre>{JSON.stringify(this.props.reduxState.tripReducers.tripNames)}</pre>
+         {/* <pre>{JSON.stringify(this.props.reduxState.tripReducers.tripNames)}</pre> */}
       </div>
     );
   }

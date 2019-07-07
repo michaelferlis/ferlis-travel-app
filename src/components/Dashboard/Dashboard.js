@@ -3,8 +3,20 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Button from '@material-ui/core/Button';
 import TripNames from '../TripNames/TripNames'
+import Card from '@material-ui/core/Card';
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
 
 
+
+const styles = {text: {margin: 200},button: {margin: 20,width: 200, },
+    card: {
+        width: '100%',
+        // height: '250px',
+        margin: '20px auto',
+        padding: '5px',
+    }
+}
 
 // sgMail.send(msg);
 
@@ -40,8 +52,12 @@ class Dashboard extends Component {
   render() {
     return (
       <div>
+        
         <pre>{JSON.stringify(this.props.reduxState.tripReducers.tripNames)}</pre>
+        
+        
         <Button type='submit' variant="outlined" color="primary" onClick={this.getNew}>New Trip</Button>
+        
           {/* <button onClick={this.getNew}>New Trip</button> */}
           
           {/* <button onClick={this.getPast}>Past Trip</button> */}
@@ -54,8 +70,9 @@ class Dashboard extends Component {
          <pre>{JSON.stringify(this.props.reduxState.tripReducers.tripNames)}</pre> */}
              {/* <li>{this.props.reduxState.addDay.addDay}</li> */}
              {/* {this.props.reduxState.tripReducers.tripListAll.map(tripList => <TripItem history={this.props.history} key={tripList.id} tripList={tripList} />)} */}
+             <Card style={styles.card}>
              {this.props.reduxState.tripReducers.tripNames.map(tripNames => <TripNames history={this.props.history} key={tripNames.id} tripNames={tripNames} />)}
-             
+             </Card>
          </ul>
           
       </div>

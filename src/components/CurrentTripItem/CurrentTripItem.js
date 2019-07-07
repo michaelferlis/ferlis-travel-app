@@ -4,10 +4,24 @@ import TableRow from '@material-ui/core/TableRow';
 import Button from '@material-ui/core/Button';
 import { connect } from 'react-redux'
 import TextField from '@material-ui/core/TextField';
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
+import { makeStyles } from '@material-ui/core/styles';
 
 
+const styles = {text: {size: '8px' },
+    card: {
+        width: '200px',
+        margin: '5px',
+        padding: '5px',
+       
+        
+    }
+}
 
 class TripItem extends Component {
+
+    
   
     handleClickDay = () =>{
         console.log('button');
@@ -19,26 +33,43 @@ class TripItem extends Component {
         })
     }
     
-  
-    
+
 
     render() {
+      
         return (
-            
-               
-                <TableRow >
-                    <Button size="small" onClick={this.handleClickDay}>
-                             View Day
-                         </Button>
-                    <TableCell>{this.props.singleTrip.day.substring(5, 7) + "/" + this.props.singleTrip.day.substring(8, 10) + "/" + this.props.singleTrip.day.substring(0, 4)}</TableCell>
-                    <TableCell>{this.props.singleTrip.city}</TableCell>
-                    {/* <TableCell>{this.props.singleTrip.travel_information}</TableCell> */}
-                    {/* <TableCell>{this.props.singleTrip.hotel}</TableCell>
-                    <TableCell>{this.props.singleTrip.restaurant_reservations}</TableCell> */}
-                    <TableCell>{this.props.singleTrip.day_comments}</TableCell>
+            <div>
                 
-                </TableRow>
-          
+            <Grid container spacing={300}>
+
+        <Grid>
+          <Paper style={styles.card} onClick={this.handleClickDay}>
+           
+           
+          {this.props.singleTrip.day.substring(5, 7) + "/" + this.props.singleTrip.day.substring(8, 10) + "/" + this.props.singleTrip.day.substring(0, 4)}
+          <br/>
+          <br/>
+          {this.props.singleTrip.city}
+          <br/>
+          <br/>
+          Daily Comments:  
+          <br/>
+          {this.props.singleTrip.day_comments}</Paper>
+        </Grid>
+        
+      </Grid>
+               
+                {/* <TableRow >
+                    {/* <Button size="small" onClick={this.handleClickDay}>
+                             View Day
+                         </Button> */}
+                    {/* <TableCell onClick={this.handleClickDay}>{this.props.singleTrip.day.substring(5, 7) + "/" + this.props.singleTrip.day.substring(8, 10) + "/" + this.props.singleTrip.day.substring(0, 4)}</TableCell>
+                    <TableCell onClick={this.handleClickDay}>{this.props.singleTrip.city}</TableCell>
+                   
+                    <TableCell onClick={this.handleClickDay}>{this.props.singleTrip.day_comments}</TableCell>
+                
+                </TableRow> */} 
+                </div>
                
                 
                 
