@@ -28,11 +28,12 @@ class CurrentTrip extends Component {
                     <TableHead>
 
                         <TableRow>
+                            <TableCell></TableCell>
                             <TableCell>Date</TableCell>
-                            <TableCell>City</TableCell>
                             {/* <TableCell>Travel Information</TableCell>
                             <TableCell>Hotel Information</TableCell>
                             <TableCell>Restaurant Reservations</TableCell> */}
+                            <TableCell>City</TableCell>
                             <TableCell>Comments</TableCell>
                         </TableRow>
 
@@ -41,7 +42,7 @@ class CurrentTrip extends Component {
                         {this.props.reduxState.tripReducers.singleTrip.map(singleTrip => <CurrentTripItem history={this.props.history} key={singleTrip.date} singleTrip={singleTrip} />)}
                     </TableBody>
                 </Table>
-         <pre>{JSON.stringify(this.props.reduxState.tripReducers.singleTrip, null, 2)}</pre>
+         {/* <pre>{JSON.stringify(this.props.reduxState.tripReducers.singleTrip, null, 2)}</pre> */}
          {/* <pre>{JSON.stringify(this.props.location.state.trip_name, null, 2)}</pre> */}
          <h4>{this.props.location.state && this.props.location.state.trip_comments }</h4>
       

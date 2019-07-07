@@ -40,6 +40,7 @@ class Dashboard extends Component {
   render() {
     return (
       <div>
+        <pre>{JSON.stringify(this.props.reduxState.tripReducers.tripNames)}</pre>
         <Button type='submit' variant="outlined" color="primary" onClick={this.getNew}>New Trip</Button>
           {/* <button onClick={this.getNew}>New Trip</button> */}
           

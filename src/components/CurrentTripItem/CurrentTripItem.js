@@ -8,15 +8,7 @@ import TextField from '@material-ui/core/TextField';
 
 
 class TripItem extends Component {
-    handleClickDelete = () =>{
-        console.log('button');
-        this.props.dispatch({
-            type: 'DELETE_DAY',
-            payload: this.props.singleTrip.id
-        })
-        this.props.history.push(`/home`)
-    }
-
+  
     handleClickDay = () =>{
         console.log('button');
         this.props.dispatch({ type: 'FETCH_DAY_DETAILS', payload: this.props.singleTrip.id })
@@ -44,12 +36,7 @@ class TripItem extends Component {
                     {/* <TableCell>{this.props.singleTrip.hotel}</TableCell>
                     <TableCell>{this.props.singleTrip.restaurant_reservations}</TableCell> */}
                     <TableCell>{this.props.singleTrip.day_comments}</TableCell>
-                <TableCell>
-                        
-                         <Button size="small" onClick={this.handleClickDelete}>
-                             Delete
-                         </Button>
-                    </TableCell> 
+                
                 </TableRow>
           
                

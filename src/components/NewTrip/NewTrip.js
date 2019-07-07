@@ -100,7 +100,7 @@ class NewTrip extends Component {
                 <pre>{JSON.stringify(this.props.reduxState.tripReducers.dayList)}</pre> */}
                 <h3>Add New Day to Trip</h3>
                 <Card style={styles.card}>
-                    <form>
+                    
                         <TextField id="date"label="Date"type="date"defaultValue="2019-07-01"onChange={this.handleDayChangeFor('date')}/>
                         <TextField style={styles.text} label="City" type='text' value={this.state.newDay.city} onChange={this.handleDayChangeFor('city')} />
                         <TextField style={styles.text} label="Travel" type='text' value={this.state.newDay.travel} onChange={this.handleDayChangeFor('travel')} />
@@ -110,7 +110,7 @@ class NewTrip extends Component {
                         <Button style={styles.button} type='submit' variant="outlined" color="primary" onClick={this.addNewDay}>Add New Day</Button>
                         
 
-                    </form>
+                    
                 </Card>
                 <Table>
                     <TableHead>
