@@ -114,6 +114,7 @@ class CurrentDayItem extends Component {
                                 label="Travel Information"
                                 value={this.state.travel}
                                 margin="normal"
+                                
                             />
                              <TextField
                                 onChange={this.handleChange}
@@ -181,6 +182,9 @@ class CurrentDayItem extends Component {
                     <Button size="small" onClick={this.handleClickDelete}>
                              Delete Day
                          </Button> */}
+                         <Button size="small" onClick={this.handleClickDelete}>
+                             Delete Day
+                         </Button> 
                     </div>   
                         
           

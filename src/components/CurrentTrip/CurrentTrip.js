@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 import { connect } from 'react-redux'
 import CurrentTripItem from '../CurrentTripItem/CurrentTripItem'
+import TextField from '@material-ui/core/TextField';
 
 // import TableBody from '@material-ui/core/TableBody';
 // import Table from '@material-ui/core/Table';
@@ -12,10 +13,24 @@ import CurrentTripItem from '../CurrentTripItem/CurrentTripItem'
 
 class CurrentTrip extends Component {
 
-  componentDidMount() {
-    // console.log('test');
+  state = {
+    tripComments: '',
+  }
+
+  setTripComments = () => { this.props.location.state &&
+  this.setState({
+      tripComments: this.props.location.state.trip_comments,
+  })
+  }
+
+
+
+  handleChange(event) {
+    console.log('test');
     
-    
+  //   this.setState({
+  //     ...this.state, [event.target.id]: event.target.value,
+  // })
   }
   getDashboard=()=> {
     this.props.history.push(`/home`)
@@ -45,11 +60,19 @@ class CurrentTrip extends Component {
                     {/* </TableBody>
                 </Table> */}
          {/* <pre>{JSON.stringify(this.props.reduxState.tripReducers.singleTrip, null, 2)}</pre> */}
-         {/* <pre>{JSON.stringify(this.props.location.state.trip_name, null, 2)}</pre> */}
+         <pre>{JSON.stringify(this.props.location.state && this.props.location.state.trip_comments)}</pre>
          <h4>Trip Comments</h4>         
          <h5>{this.props.location.state && this.props.location.state.trip_comments }</h5>
       
-
+         <TextField
+                                onChange={this.handleChange}
+                                id="tripComments"
+                                
+                                fullWidth
+                                label="Trip Comments"
+                                value={this.props.location.state && this.props.location.state.trip_comments}
+                                margin="normal"
+                            />
       
       </div>
     );
