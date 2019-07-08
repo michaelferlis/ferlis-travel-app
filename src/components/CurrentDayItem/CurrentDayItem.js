@@ -8,14 +8,14 @@ import Grid from '@material-ui/core/Grid';
 
 
 
-const styles = {text: {size: '8px' },
-    comments: {
-        width: '1000px',
-        margin: '5px',
-        padding: '5px',
+// const styles = {text: {size: '8px' },
+//     comments: {
+//         width: '1000px',
+//         margin: '5px',
+//         padding: '5px',
         
-    }
-}
+//     }
+// }
 
 
 
@@ -150,48 +150,12 @@ class CurrentDayItem extends Component {
                                 <Button size="large" onClick={() => { this.setState({ ...this.state, editMode: true }) }} variant="contained" color="primary">Edit Day</Button>
                             }
                         </Grid>
-
-                   {/* <p></p>
-                   <pre>{JSON.stringify(this.state)}</pre>
-                   <h4>Date</h4>
-                   <TextField value={this.props.singleDay.day.substring(5, 7) + "/" + this.props.singleDay.day.substring(8, 10) + "/" + this.props.singleDay.day.substring(0, 4)}></TextField>
-                   <br />
-                   <h4>City</h4>
-                    <TextField value={this.props.singleDay.city}></TextField>
-                    <br />
-                    <h4>Travel Information</h4>
-                    <TextField value={this.props.singleDay.travel_information}></TextField>
-                    <br />
-                    <h4>Hotel Information</h4>
-                    <TextField value={this.props.singleDay.hotel}></TextField>
-                    <br />
-                    <h4>Restaurant Reservations</h4>
-                    <TextField value={this.props.singleDay.restaurant_reservations}></TextField>
-                    <br />
-                    <h4>Daily Comments</h4>
-                    <TextField style={styles.comments}value={this.props.singleDay.day_comments}></TextField>
-
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <Button size="small" onClick={this.checkState}>
-                             state
-                         </Button>
-                    <Button size="small" onClick={this.handleClickDelete}>
-                             Delete Day
-                         </Button> */}
                          <Button size="small" onClick={this.handleClickDelete}>
                              Delete Day
                          </Button> 
                     </div>   
                         
-          
-               
-                
-                
-              
+  
            
         )
     }
