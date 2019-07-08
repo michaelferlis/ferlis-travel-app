@@ -9,7 +9,8 @@ import Grid from '@material-ui/core/Grid'
 class CurrentTrip extends Component {
 
   state = {
-    tripComments: '',
+    trip_name: '',
+    trip_comments: '',
     editMode: false,
 
   }
@@ -29,6 +30,7 @@ class CurrentTrip extends Component {
     this.props.location.state &&
     this.setState({
       trip_comments: this.props.location.state.trip_comments,
+      trip_name: this.props.location.state.trip_name,
       editMode: false,
       id: this.props.location.state.id,
     })
@@ -55,6 +57,15 @@ class CurrentTrip extends Component {
     return (
       <div>
         <h2>{this.props.location.state && this.props.location.state.trip_name}</h2>
+        <TextField
+          onChange={this.handleChange}
+          id="trip_name"
+          disabled={!this.state.editMode}
+          fullWidth
+          label="Trip Name"
+          value={this.state.trip_name}
+          margin="normal"
+        />
 
 
         <>
@@ -64,22 +75,22 @@ class CurrentTrip extends Component {
         <pre>{JSON.stringify(this.props.location.state && this.props.location.state.id)}</pre>
         <pre>{JSON.stringify(this.props.location.state && this.state.editMode)}</pre>
         <h4>Trip Comments</h4>
-        <h5>{this.props.location.state && this.props.location.state.trip_comments}</h5>
+        {/* <h5>{this.props.location.state && this.props.location.state.trip_comments}</h5> */}
 
         <TextField
           onChange={this.handleChange}
-          id="tripComments"
+          id="trip_comments"
           disabled={!this.state.editMode}
           fullWidth
           label="Trip Comments"
-          value={this.state.tripComments}
+          value={this.state.trip_comments}
           margin="normal"
         />
         <Grid item xs={9} className="grid-item-text-center">
                             {this.state.editMode ?
                                 <Button size="large" onClick={this.updateTrip} variant="contained" color="primary">Save Changes</Button>
                                 :
-                                <Button size="large" onClick={() => { this.setState({ ...this.state, editMode: true }) }} variant="contained" color="primary">Edit Trip Comments</Button>
+                                <Button size="large" onClick={() => { this.setState({ ...this.state, editMode: true }) }} variant="contained" color="primary">Edit Trip</Button>
                             }
                             </Grid>
       </div>
