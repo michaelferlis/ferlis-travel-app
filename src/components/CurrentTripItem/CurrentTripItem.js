@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import TableCell from '@material-ui/core/TableCell';
-import TableRow from '@material-ui/core/TableRow';
-import Button from '@material-ui/core/Button';
+// import TableCell from '@material-ui/core/TableCell';
+// import TableRow from '@material-ui/core/TableRow';
+// import Button from '@material-ui/core/Button';
 import { connect } from 'react-redux'
-import TextField from '@material-ui/core/TextField';
+// import TextField from '@material-ui/core/TextField';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import { makeStyles } from '@material-ui/core/styles';
+// import { makeStyles } from '@material-ui/core/styles';
 
 
 const styles = {text: {size: '8px' },
@@ -29,7 +29,7 @@ class TripItem extends Component {
         
         this.props.history.push({
             pathname: '/day',
-            state: this.props.tripNames,
+            state: this.props.singleTrip,
         })
     }
     
@@ -39,6 +39,7 @@ class TripItem extends Component {
       
         return (
             <div>
+                <h2>{this.props.tripName}</h2>
                 
             <Grid container spacing={300}>
 

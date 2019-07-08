@@ -68,6 +68,27 @@ import axios from 'axios'
     
   }
 
+  function* updateDay (action) {
+    try {
+        const tripResponse = yield axios.put(`/api/newtrip/${action.payload.id}`, action.payload);
+        console.log('saga', action.payload);
+        
+        console.log('trip response',tripResponse.data)
+        // yield put({type: 'FETCH_TRIPS', payload: tripResponse.data})
+        
+    } catch(error){
+        console.log('error deleting day', error);
+    }
+    
+  }
+
+//   function* updateDay(action) {
+//     yield axios.put(`api/newtrip/${action.payload}`)
+//     console.log(action.payload);
+    
+    
+// }
+
 
 
 function* registrationSaga() {
@@ -77,6 +98,7 @@ function* registrationSaga() {
     yield takeLatest('FETCH_TRIP_DETAILS', fetchTripDetails);
     yield takeLatest('DELETE_DAY', deleteDay);
     yield takeLatest('FETCH_DAY_DETAILS', fetchDayDetails);
+    yield takeLatest('UPDATE_DAY', updateDay);
   }
   
   export default registrationSaga;

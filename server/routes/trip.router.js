@@ -71,20 +71,21 @@ router.get('/', rejectUnauthenticated,(req, res) => {
       });
   });
 
-  router.put('/', (req, res) => {
+  router.put('/:id', (req, res) => {
     const updatedDay = req.body;
-  
+    console.log(req.body);
+    
     const queryText = `UPDATE "trip_days"
     SET "day" = $1, 
     "city" = $2, 
     "travel_information" = $3, 
     "hotel" = $4, 
     "restaurant_reservations" = $5, 
-    "day_comments" = $6, 
+    "day_comments" = $6 
     WHERE id=$7;`;
   
     const queryValues = [
-      updatedDay.date,
+      updatedDay.day,
       updatedDay.city,
       updatedDay.travel,
       updatedDay.hotel,

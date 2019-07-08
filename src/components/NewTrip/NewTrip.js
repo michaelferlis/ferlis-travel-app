@@ -126,7 +126,7 @@ class NewTrip extends Component {
 
                     </TableHead>
                     <TableBody>
-                        {this.props.reduxState.tripReducers.addDay.map(day => <DayItem history={this.props.history} key={day.date} day={day} />)}
+                        {this.props.reduxState.tripReducers.addDay.map(day => <DayItem history={this.props.history} key={day.id} day={day} />)}
                     </TableBody>
                 </Table>
 

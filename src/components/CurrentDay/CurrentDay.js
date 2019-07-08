@@ -7,14 +7,12 @@ class CurrentDay extends Component {
   componentDidMount() {
     this.props.dispatch({type: 'FETCH_TRIP_NAMES'})
   }
-  getDashboard=()=> {
-    this.props.history.push(`/home`)
-  }
+  
 
   render() {
     return (
       <div>
-          <button onClick={this.getDashboard}>Dashboard</button>
+        
          
          <p>{this.props.reduxState.tripReducers.singleDay.map(singleDay => <CurrentDayItem history={this.props.history} key={singleDay.id} singleDay={singleDay} />)}</p>
          {/* <pre>{JSON.stringify(this.props.reduxState.tripReducers.singleDay, null, 2)}</pre> */}

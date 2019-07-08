@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import TableCell from '@material-ui/core/TableCell';
-import TableRow from '@material-ui/core/TableRow';
+// import TableCell from '@material-ui/core/TableCell';
+// import TableRow from '@material-ui/core/TableRow';
 import Button from '@material-ui/core/Button';
 import { connect } from 'react-redux'
 import TextField from '@material-ui/core/TextField';
@@ -22,17 +22,18 @@ const styles = {text: {size: '8px' },
 class CurrentDayItem extends Component {
 
     state = {
-        newDay: {
-            date: '',
+         
+            day: '',
             city: '',
             travel: '',
             hotel: '',
             reservations: '',
             dayComments: '',
-        }
+        
     }
  
     componentDidMount () {
+        console.log('test',this.state);
         this.setStateData()
         
 
@@ -48,20 +49,27 @@ class CurrentDayItem extends Component {
         
         this.props.singleDay &&
             this.setState({
-                date: this.props.singleDay.day,
+                day: this.props.singleDay.day,
                 city: this.props.singleDay.city,
                 travel: this.props.singleDay.travel_information,
                 hotel: this.props.singleDay.hotel,
                 reservations: this.props.singleDay.restaurant_reservations,
                 dayComments: this.props.singleDay.day_comments,
                 editMode: false,
+                id: this.props.singleDay.id,
                
             })
     }
 
     updateDay = () =>{
         console.log(this.state);
-        
+        this.props.dispatch({
+            type: 'UPDATE_DAY',
+            payload: this.state
+        })
+        this.setState({
+            ...this.state, editMode: false,
+        })
     }
 
     handleClickDelete = () =>{
