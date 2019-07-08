@@ -7,15 +7,26 @@ const router = express.Router();
 
   
 
-  // router.get('/', rejectUnauthenticated, (req, res) => {
-  //   const queryText = 'SELECT * FROM "trip_days";';
-  //   pool.query(queryText)
-  //     .then((result) => { res.send(result.rows); })
-  //     .catch((err) => {
-  //       console.log('Error completing SELECT trip query', err);
-  //       res.sendStatus(500);
-  //     });
-  // });
+
+//   router.put('/:id', (req, res) => {
+//     const updatedtrip = req.body;
+//     console.log(req.body);
+    
+//     const queryText = `UPDATE "trips"
+//     SET "trip_comments" = $1,  
+//     WHERE id=$2;`;
+  
+//     const queryText = [
+//       updatedTrip.tripComments,
+//       updatedTrip.id,
+//     ];
+//     pool.query(queryText, queryValues)
+//     .then(() => { res.sendStatus(200); })
+//     .catch((err) => {
+//       console.log('Error completing SELECT day query', err);
+//       res.sendStatus(500);
+//     });
+// });
 
   router.get('/:id', (req, res) => {
     pool.query('SELECT * FROM "trip_days" WHERE "trip_id"=$1 ORDER BY "day";', [req.params.id])

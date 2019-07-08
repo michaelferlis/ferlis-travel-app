@@ -21,6 +21,7 @@ const styles = {text: {margin: 20},button: {margin: 20,width: 200, },
 
 class NewTrip extends Component {
     state = {
+       date:'',
         newDay: {
             date: '',
             city: '',
@@ -36,20 +37,6 @@ class NewTrip extends Component {
     }
 
 
-    addNewDay = event => {
-        event.preventDefault();
-        this.props.dispatch({ type: 'ADD_DAY', payload: this.state.newDay })
-        this.setState({
-            newDay: {
-                date: '',
-                city: '',
-                travel: '',
-                hotel: '',
-                reservations: '',
-                dayComments: '',
-            },
-        });
-    }
 
     addTrip = event => {
         event.preventDefault();
@@ -78,6 +65,17 @@ class NewTrip extends Component {
         });
     }
 
+    getCurrentDate = () => {
+        let today = new Date();
+        let dd = String(today.getDate()).padStart(2, '0');
+        let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        let yyyy = today.getFullYear();
+        today = yyyy + '-' + mm + '-' + dd;
+        this.setState({
+            ...this.state, date: today,
+        })
+    }
+
     handleTripChangeFor = (propertyName) => event => {
         // console.log('event happended')
         this.setState({
@@ -101,7 +99,7 @@ class NewTrip extends Component {
                 <h3>Add New Day to Trip</h3>
                 <Card style={styles.card}>
                     
-                        <TextField id="date"label="Date"type="date"defaultValue="2019-07-01"onChange={this.handleDayChangeFor('date')}/>
+                        <TextField id="date"type="date"defaultValue={this.state.date}onChange={this.handleDayChangeFor('date')}/>
                         <TextField style={styles.text} label="City" type='text' value={this.state.newDay.city} onChange={this.handleDayChangeFor('city')} />
                         <TextField style={styles.text} label="Travel" type='text' value={this.state.newDay.travel} onChange={this.handleDayChangeFor('travel')} />
                         <TextField style={styles.text} label="Hotel" type='text' value={this.state.newDay.hotel} onChange={this.handleDayChangeFor('hotel')} />
