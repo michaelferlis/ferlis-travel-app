@@ -21,6 +21,12 @@ const styles = {text: {margin: 200},button: {margin: 20,width: 200, },
 // sgMail.send(msg);
 
 class Dashboard extends Component {
+  state = {
+  
+    usernameIsEditable: false,
+ 
+  }
+  
   
 
   componentDidMount () {
@@ -58,13 +64,9 @@ class Dashboard extends Component {
         
         <Button type='submit' variant="outlined" color="primary" onClick={this.getNew}>New Trip</Button>
         
-          {/* <button onClick={this.getNew}>New Trip</button> */}
-          
-          {/* <button onClick={this.getPast}>Past Trip</button> */}
-          
-
          <h2>Your Trips</h2>
          <ul>
+        
          {/* <pre>{JSON.stringify(this.props.reduxState.tripReducers.tripListAll)}</pre>
          <pre>{JSON.stringify(this.props.reduxState.tripReducers)}</pre>
          <pre>{JSON.stringify(this.props.reduxState.tripReducers.tripNames)}</pre> */}

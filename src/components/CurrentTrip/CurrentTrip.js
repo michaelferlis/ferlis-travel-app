@@ -17,8 +17,11 @@ class CurrentTrip extends Component {
 
   componentDidMount() {
     this.setTripComments();
-    console.log('current state', this.state.id);
+    
   }
+
+  
+  
 
   handleChange = (event) => {
     this.setState({
@@ -51,6 +54,16 @@ class CurrentTrip extends Component {
 
   getDashboard = () => {
     this.props.history.push(`/home`)
+  }
+  addDay= () =>{
+    this.props.dispatch({
+      type: 'ADD_SINGLE_DAY',
+      payload: {
+        ...this.state, trip_id: this.props.location.state.id
+      }
+    })
+    
+    
   }
 
   render() {
@@ -93,6 +106,9 @@ class CurrentTrip extends Component {
                                 <Button size="large" onClick={() => { this.setState({ ...this.state, editMode: true }) }} variant="contained" color="primary">Edit Trip</Button>
                             }
                             </Grid>
+                            <Button size="small" onClick={this.addDay}>
+                             Add Day
+                         </Button> 
       </div>
     );
   }

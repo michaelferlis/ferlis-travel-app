@@ -153,6 +153,7 @@ class CurrentDayItem extends Component {
                          <Button size="small" onClick={this.handleClickDelete}>
                              Delete Day
                          </Button> 
+                       
                     </div>   
                         
   

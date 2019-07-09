@@ -15,6 +15,7 @@ class TripItem extends Component {
     render() {
         return (
             <div>
+                
                
                 <TableRow >
                     <TableCell>{this.props.tripList.day}</TableCell>

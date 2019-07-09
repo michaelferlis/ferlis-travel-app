@@ -32,6 +32,16 @@ import axios from 'axios'
       console.log('error with posting a trip:', error);
     }
   }
+
+  function* addDay(action) {
+    try {
+      yield axios.post('/api/name', action.payload);
+    console.log(action.payload);
+    
+    } catch (error) {
+      console.log('error with posting a trip:', error);
+    }
+  }
   function* fetchTripDetails (action) {
     try {
         const tripResponse = yield axios.get(`/api/details/${action.payload}`);
@@ -114,6 +124,7 @@ function* registrationSaga() {
     yield takeLatest('FETCH_DAY_DETAILS', fetchDayDetails);
     yield takeLatest('UPDATE_DAY', updateDay);
     yield takeLatest('UPDATE_TRIP', updateTrip);
+    yield takeLatest('ADD_SINGLE_DAY', addDay);
   }
   
   export default registrationSaga;

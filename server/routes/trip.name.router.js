@@ -17,6 +17,24 @@ const router = express.Router();
 
 
 
+  router.post('/', (req, res) => {
+    const newDay = req.body;
+    const queryText = `INSERT INTO "trip_days" ("day", "city", "travel_information", "hotel", "restaurant_reservations", "day_comments", "trip_id")
+    Values ('12-27-1988', 'insert city', 'insert travel', 'insert hotel', 'insert restaurant reservations', 'comments?', $1);`;
+    const queryValues = [
+      newDay.trip_id,
+    ];
+    pool.query(queryText, queryValues)
+      .then(() => { res.sendStatus(201); })
+      .catch((err) => {
+        console.log('Error completing add day query', err);
+        res.sendStatus(500);
+      });
+  });
   
+
+  
+      
+
 
   module.exports = router
