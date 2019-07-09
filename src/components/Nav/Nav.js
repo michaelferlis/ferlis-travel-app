@@ -9,7 +9,9 @@ const Nav = (props) => (
     <Link to="/home">
       <h2 className="nav-title">Travel App</h2>
     </Link>
+   
     <div className="nav-right">
+    
       <Link className="nav-link" to="/home">
         {/* Show this link if they are logged in or not,
         but call this link 'Home' if they are logged in,
@@ -19,9 +21,9 @@ const Nav = (props) => (
       {/* Show the link to the info page and the logout button if the user is logged in */}
       {props.user.id && (
         <>
-          {/* <Link className="nav-link" to="/info">
-            Info Page
-          </Link> */}
+          <Link className="nav-link" to="/new">
+            Plan New Trip!
+          </Link>
           <LogOutButton className="nav-link"/>
         </>
       )}

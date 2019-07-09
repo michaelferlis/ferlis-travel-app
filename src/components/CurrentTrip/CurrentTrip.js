@@ -91,11 +91,11 @@ class CurrentTrip extends Component {
           {this.props.reduxState.tripReducers.singleTrip.map(singleTrip => <CurrentTripItem history={this.props.history} key={singleTrip.date} singleTrip={singleTrip} />)}
         </>
 
-        <pre>{JSON.stringify(this.props.location.state && this.props.location.state.id)}</pre>
-        <pre>{JSON.stringify(this.props.location.state && this.state.editMode)}</pre>
+        {/* <pre>{JSON.stringify(this.props.location.state && this.props.location.state.id)}</pre>
+        <pre>{JSON.stringify(this.props.location.state && this.state.editMode)}</pre> */}
         <h4>Trip Comments</h4>
         {/* <h5>{this.props.location.state && this.props.location.state.trip_comments}</h5> */}
-      <Grid container spacing={1002}>
+      <Grid container spacing={1}>
         
         <TextField
           onChange={this.handleChange}
@@ -110,15 +110,15 @@ class CurrentTrip extends Component {
         </Grid>
         <Grid item xs={9} className="grid-item-text-center">
                             {this.state.editMode ?
-                                <Button size="large" onClick={this.updateTrip} variant="contained" color="primary">Save Changes</Button>
+                                <Button size="small" onClick={this.updateTrip} variant="contained" color="white">Save Changes</Button>
                                 :
-                                <Button size="large" onClick={() => { this.setState({ ...this.state, editMode: true }) }} variant="contained" color="primary">Edit Trip</Button>
+                                <Button size="small" onClick={() => { this.setState({ ...this.state, editMode: true }) }} variant="contained" color="primary">Edit Trip</Button>
                             }
                             </Grid>
-                            <Button size="small" onClick={this.addDay}>
+                            <Button size="small" onClick={this.addDay}variant="contained" color="white">
                              Add Day
                          </Button> 
-                         <Button size="small" onClick={this.markComplete}>
+                         <Button size="small" onClick={this.markComplete}variant="contained" color="white">
                             Trip Complete
                          </Button> 
                          </div>

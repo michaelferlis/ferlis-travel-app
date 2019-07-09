@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Card from '@material-ui/core/Card';
+// import Card from '@material-ui/core/Card';
 import Button from '@material-ui/core/Button';
 import { connect } from 'react-redux'
 
@@ -25,28 +25,21 @@ class TripItem extends Component {
 
     render() {
         return (
-            <div>
+            <>
 
                 {this.props.tripNames.complete === this.props.complete ?
                     <>
-                        <Button type='submit' variant="outlined" color="primary" onClick={this.getDetails}>{this.props.tripNames.trip_name}</Button>
+                        <Button style={{display: "block"}}  variant="contained" color="white" onClick={this.getDetails}>{this.props.tripNames.trip_name}</Button>
                     </>
                     :
-                    <></>
-                    // <Card>
-                    //     <h6>false</h6>
-                    //     <Button type='submit' variant="outlined" color="primary" onClick={this.getDetails}>{this.props.tripNames.trip_name}</Button></Card> 
+                    <>
+                    {/* <Button display="inline" variant="contained" color="white" onClick={this.getDetails}>{this.props.tripNames.trip_name}</Button> */}
+                    </>
                 }
-                <br />
-                {/* <span>{this.props.tripNames.complete}</span>
-                        <span>{this.props.complete}</span>
-               */}
-                {/* <Button type='submit' variant="outlined" color="primary" onClick={this.getDetails}>{this.props.tripNames.trip_name}</Button> */}
-
-                {/* <pre>{JSON.stringify(this.props.tripNames.complete)}</pre> */}
+                
 
 
-            </div>
+            </>
         )
     }
 }

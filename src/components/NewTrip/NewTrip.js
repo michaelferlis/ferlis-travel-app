@@ -113,7 +113,7 @@ class NewTrip extends Component {
                 <h3>Add New Day to Trip</h3>
                 <Card style={styles.card}>
                     
-                        <TextField id="date"type="date"defaultValue={this.state.date}onChange={this.handleDayChangeFor('date')}/>
+                        <TextField id="date"type="date" defaultValue={this.state.date}onChange={this.handleDayChangeFor('date')}/>
                         <TextField style={styles.text} label="City" type='text' value={this.state.newDay.city} onChange={this.handleDayChangeFor('city')} />
                         <TextField style={styles.text} label="Travel" type='text' value={this.state.newDay.travel} onChange={this.handleDayChangeFor('travel')} />
                         <TextField style={styles.text} label="Hotel" type='text' value={this.state.newDay.hotel} onChange={this.handleDayChangeFor('hotel')} />

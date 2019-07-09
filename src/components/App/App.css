@@ -1,8 +1,15 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+    font-family: 'Helvetica Neue';
     margin: 10px;
-    background-color: aliceblue;
-    /* background-image: url("world.jpg"); */
+    /* padding: -9px; */
+    background-image: url("world.jpg"); 
+    background-repeat: no-repeat;
+  background-size: 1100px 660px;
+    /* background-repeat: no-repeat;
+    background-size: auto; */
+    background-color: #8DB3E0;
+   
 }
 
 .alert {
@@ -11,7 +18,7 @@ body {
 }
 
 form {
-    background-color: #dbd5d5;
+    background-color: #dbd5d500;
     width: 30%;
     height: 250px;
     margin: 20px auto;

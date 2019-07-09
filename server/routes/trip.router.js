@@ -27,7 +27,12 @@ router.get('/', rejectUnauthenticated,(req, res) => {
     const queryTextTrip = `INSERT INTO "trips" ("trip_name", "trip_comments")
     VALUES ($1, $2) RETURNING "id"; `
     pool.query(queryTextTrip, [newTrip.name, newTrip.tripComments] )
-    .then (response =>{
+    .then (response =>{ 
+
+      pool.query(`INSERT INTO "user_trips" ("trip_id", "user_id") VALUES ($1, $2);`, [response.rows[0].id, req.user.id])
+      .then(response=> console.log(response));
+      
+
       for (let day of newTrip.daysArray){
 
         const queryTextDay = `INSERT INTO "trip_days" ("day", "city", "travel_information", "hotel", "restaurant_reservations", "day_comments", "trip_id")

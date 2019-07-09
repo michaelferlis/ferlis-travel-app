@@ -109,7 +109,7 @@ import axios from 'axios'
 
   function* markComplete(action) {
     try {
-      const tripResponse = axios.put(`/api/name/${action.payload}`, action.payload);
+      const tripResponse = yield axios.put(`/api/name/${action.payload}`, action.payload);
       console.log('trip response', tripResponse.data);
       
     } catch(error){
