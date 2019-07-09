@@ -37,6 +37,20 @@ class NewTrip extends Component {
     }
 
 
+    addNewDay = event => {
+        event.preventDefault();
+        this.props.dispatch({ type: 'ADD_DAY', payload: this.state.newDay })
+        this.setState({
+            newDay: {
+                date: '',
+                city: '',
+                travel: '',
+                hotel: '',
+                reservations: '',
+                dayComments: '',
+            },
+        });
+    }
 
     addTrip = event => {
         event.preventDefault();

@@ -8,20 +8,7 @@ import { connect } from 'react-redux'
 
 class DayItem extends Component {
 
-    // handleDelete = () => {
-    //     this.props.dispatch({
-    //         type: 'DELETE_PLANT',
-    //         payload: this.props.plant.id
-    //     })
-    // }
-
-    // getDetails = () => {
-    //     this.props.dispatch({
-    //         type: 'GET_DETAIL_PAGE',
-    //         payload: this.props.plant.id
-    //     })
-    //     this.props.history.push(`/details/${this.props.plant.id}`)
-    // }
+    
 
     render() {
         return (

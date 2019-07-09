@@ -95,7 +95,8 @@ class CurrentTrip extends Component {
         <pre>{JSON.stringify(this.props.location.state && this.state.editMode)}</pre>
         <h4>Trip Comments</h4>
         {/* <h5>{this.props.location.state && this.props.location.state.trip_comments}</h5> */}
-
+      <Grid container spacing={1002}>
+        
         <TextField
           onChange={this.handleChange}
           id="trip_comments"
@@ -105,6 +106,8 @@ class CurrentTrip extends Component {
           value={this.state.trip_comments}
           margin="normal"
         />
+        
+        </Grid>
         <Grid item xs={9} className="grid-item-text-center">
                             {this.state.editMode ?
                                 <Button size="large" onClick={this.updateTrip} variant="contained" color="primary">Save Changes</Button>
