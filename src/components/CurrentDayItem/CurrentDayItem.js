@@ -90,7 +90,7 @@ class CurrentDayItem extends Component {
 
                     <TextField
                                 onChange={this.handleChange}
-                                id="date"
+                                id="day"
                                 disabled={!this.state.editMode}
                                 fullWidth
                                 label="Date"
