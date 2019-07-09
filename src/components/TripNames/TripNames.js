@@ -27,20 +27,22 @@ componentDidMount (){
         return (
             <div>
                
-               {/* {this.props.tripNames.complete ?
-                    <Card>
-                        <h6>true</h6>
+               {this.props.tripNames.complete === this.props.complete ?
+                    <>
+                        
                         <Button type='submit' variant="outlined" color="primary" onClick={this.getDetails}>{this.props.tripNames.trip_name}</Button>
-                        </Card>
+                        </>
                     :
-                    <Card>
-                        <h6>true</h6>
-                        <Button type='submit' variant="outlined" color="primary" onClick={this.getDetails}>{this.props.tripNames.trip_name}</Button></Card> 
-                } */}
+                    <></>
+                    // <Card>
+                    //     <h6>false</h6>
+                    //     <Button type='submit' variant="outlined" color="primary" onClick={this.getDetails}>{this.props.tripNames.trip_name}</Button></Card> 
+                }
                 <br />
-
-              
-                <Button type='submit' variant="outlined" color="primary" onClick={this.getDetails}>{this.props.tripNames.trip_name}</Button>
+                {/* <span>{this.props.tripNames.complete}</span>
+                        <span>{this.props.complete}</span>
+               */}
+                {/* <Button type='submit' variant="outlined" color="primary" onClick={this.getDetails}>{this.props.tripNames.trip_name}</Button> */}
                 
                 {/* <pre>{JSON.stringify(this.props.tripNames.complete)}</pre> */}
 

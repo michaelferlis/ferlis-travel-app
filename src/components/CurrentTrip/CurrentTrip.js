@@ -109,10 +109,15 @@ class CurrentTrip extends Component {
                             <Button size="small" onClick={this.addDay}>
                              Add Day
                          </Button> 
-      </div>
+                         <Button size="small" onClick={this.markComplete}>
+                            Trip Complete
+                         </Button> 
+                         </div>
     );
   }
+  
 }
+
 
 const mapStateToProps = reduxState => ({
   reduxState

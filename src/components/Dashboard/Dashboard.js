@@ -73,7 +73,12 @@ class Dashboard extends Component {
              {/* <li>{this.props.reduxState.addDay.addDay}</li> */}
              {/* {this.props.reduxState.tripReducers.tripListAll.map(tripList => <TripItem history={this.props.history} key={tripList.id} tripList={tripList} />)} */}
              <Card style={styles.card}>
-             {this.props.reduxState.tripReducers.tripNames.map(tripNames => <TripNames history={this.props.history} key={tripNames.id} tripNames={tripNames} />)}
+               
+             {this.props.reduxState.tripReducers.tripNames.map(tripNames => <TripNames history={this.props.history} key={tripNames.id} tripNames={tripNames} complete={"false"} />)}
+             </Card>
+
+             <Card style={styles.card}>
+             {this.props.reduxState.tripReducers.tripNames.map(tripNames => <TripNames history={this.props.history} key={tripNames.id} tripNames={tripNames} complete={"true"} />)}
              </Card>
          </ul>
           
