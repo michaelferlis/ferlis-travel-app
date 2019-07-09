@@ -62,7 +62,7 @@ class CurrentTrip extends Component {
         ...this.state, trip_id: this.props.location.state.id
       }
     })
-    
+    this.props.history.push(`/home`)
     
   }
 
