@@ -31,6 +31,26 @@ const router = express.Router();
         res.sendStatus(500);
       });
   });
+
+  router.put('/:id', (req, res) => {
+    const markComplete = req.body;
+    console.log(req.body);
+    
+    const queryText = `UPDATE "trips"
+    SET "complete" = 'true' 
+    WHERE "id"= $1;`;
+  
+    const queryValues = [
+      markComplete.id,
+    ];
+  
+    pool.query(queryText, queryValues)
+      .then(() => { res.sendStatus(200); })
+      .catch((err) => {
+        console.log('Error completing SELECT day query', err);
+        res.sendStatus(500);
+      });
+  });
   
 
   

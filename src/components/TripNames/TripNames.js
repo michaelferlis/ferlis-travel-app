@@ -12,26 +12,25 @@ class TripItem extends Component {
         this.props.history.push({
             pathname: '/current',
             state: this.props.tripNames,
-            
+
         })
     }
 
 
-componentDidMount (){
-    console.log(this.props.tripNames.id);
-    
-}
+    componentDidMount() {
+        console.log(this.props.tripNames.id);
+
+    }
 
 
     render() {
         return (
             <div>
-               
-               {this.props.tripNames.complete === this.props.complete ?
+
+                {this.props.tripNames.complete === this.props.complete ?
                     <>
-                        
                         <Button type='submit' variant="outlined" color="primary" onClick={this.getDetails}>{this.props.tripNames.trip_name}</Button>
-                        </>
+                    </>
                     :
                     <></>
                     // <Card>
@@ -43,7 +42,7 @@ componentDidMount (){
                         <span>{this.props.complete}</span>
                */}
                 {/* <Button type='submit' variant="outlined" color="primary" onClick={this.getDetails}>{this.props.tripNames.trip_name}</Button> */}
-                
+
                 {/* <pre>{JSON.stringify(this.props.tripNames.complete)}</pre> */}
 
 

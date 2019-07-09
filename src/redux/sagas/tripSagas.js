@@ -66,6 +66,7 @@ import axios from 'axios'
     
   }
 
+
   function* deleteDay (action) {
     try {
         const tripResponse = yield axios.delete(`/api/newtrip/${action.payload}`);
@@ -106,6 +107,16 @@ import axios from 'axios'
     
   }
 
+  function* markComplete(action) {
+    try {
+      const tripResponse = axios.put(`/api/name/${action.payload}`, action.payload);
+      console.log('trip response', tripResponse.data);
+      
+    } catch(error){
+    console.log('error marking trip', error);
+    }
+  }
+
 //   function* updateDay(action) {
 //     yield axios.put(`api/newtrip/${action.payload}`)
 //     console.log(action.payload);
@@ -125,6 +136,7 @@ function* registrationSaga() {
     yield takeLatest('UPDATE_DAY', updateDay);
     yield takeLatest('UPDATE_TRIP', updateTrip);
     yield takeLatest('ADD_SINGLE_DAY', addDay);
+    yield takeLatest('MARK_COMPLETE', markComplete);
   }
   
   export default registrationSaga;

@@ -12,16 +12,11 @@ class CurrentTrip extends Component {
     trip_name: '',
     trip_comments: '',
     editMode: false,
-
   }
 
   componentDidMount() {
     this.setTripComments();
-    
   }
-
-  
-  
 
   handleChange = (event) => {
     this.setState({
@@ -62,9 +57,20 @@ class CurrentTrip extends Component {
         ...this.state, trip_id: this.props.location.state.id
       }
     })
-    this.props.history.push(`/home`)
+    this.props.history.push(`/home`)  
+  }
+
+  markComplete = () =>{
+   this.props.dispatch({
+     type: 'MARK_COMPLETE',
+     payload: {
+      id: this.props.location.state.id
+     }
+   })
     
   }
+
+
 
   render() {
     return (
