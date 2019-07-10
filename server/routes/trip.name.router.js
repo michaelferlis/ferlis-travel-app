@@ -7,7 +7,7 @@ const router = express.Router();
 
   router.get('/', rejectUnauthenticated,(req, res) => {
     
-    const queryText = `SELECT "trip_name", "trips"."id" AS "id", "user_id", "complete"  FROM "trips"
+    const queryText = `SELECT "trip_name", "trips"."id" AS "id", "user_id", "complete", "trip_comments"  FROM "trips"
 
     JOIN "user_trips" ON "user_trips"."trip_id" = "trips"."id"
     JOIN "user" ON "user_trips"."user_id" = "user"."id"
