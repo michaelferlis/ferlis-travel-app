@@ -6,9 +6,15 @@ const userStrategy = require('../strategies/user.strategy');
 const router = express.Router();
 
   router.get('/', rejectUnauthenticated,(req, res) => {
-    const queryText = `SELECT * FROM "trips";`
-    pool.query(queryText)
-      .then((result) => { res.send(result.rows); })
+    
+    const queryText = `SELECT "trip_name", "trips"."id" AS "id", "user_id", "complete"  FROM "trips"
+
+    JOIN "user_trips" ON "user_trips"."trip_id" = "trips"."id"
+    JOIN "user" ON "user_trips"."user_id" = "user"."id"
+    WHERE "user_id" = $1 ORDER BY "trip_name";
+    `
+    pool.query(queryText, [req.user.id])
+      .then((result) => { console.log('trip name router',result.rows);res.send(result.rows ); })
       .catch((err) => {
         console.log('Error completing SELECT trips query', err);
         res.sendStatus(500);

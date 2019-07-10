@@ -9,6 +9,8 @@ import axios from 'axios'
     try {
         const dayResponse = yield axios.get('/api/newtrip');
         yield put({type: 'SET_DAYS', payload: dayResponse.data})
+        console.log(dayResponse.data);
+        
     } catch(error){
         console.log('error fetching plants', error);
     }
@@ -19,29 +21,14 @@ import axios from 'axios'
     try {
         const dayResponse = yield axios.get('/api/name');
         yield put({type: 'SET_TRIP_NAMES', payload: dayResponse.data})
+        console.log(dayResponse.data);
     } catch(error){
         console.log('error fetching trips', error);
     }
     
-  }
-  function* addTrip(action) {
-    try {
-      yield axios.post('/api/newtrip', action.payload);
-    //   yield put({type: 'ADD_TRIP'});
-    } catch (error) {
-      console.log('error with posting a trip:', error);
-    }
+    
   }
 
-  function* addDay(action) {
-    try {
-      yield axios.post('/api/name', action.payload);
-    console.log(action.payload);
-    
-    } catch (error) {
-      console.log('error with posting a trip:', error);
-    }
-  }
   function* fetchTripDetails (action) {
     try {
         const tripResponse = yield axios.get(`/api/details/${action.payload}`);
@@ -65,6 +52,25 @@ import axios from 'axios'
     }
     
   }
+  function* addTrip(action) {
+    try {
+      yield axios.post('/api/newtrip', action.payload);
+    //   yield put({type: 'ADD_TRIP'});
+    } catch (error) {
+      console.log('error with posting a trip:', error);
+    }
+  }
+
+  function* addDay(action) {
+    try {
+      yield axios.post('/api/name', action.payload);
+    console.log(action.payload);
+    
+    } catch (error) {
+      console.log('error with posting a trip:', error);
+    }
+  }
+  
 
 
   function* deleteDay (action) {
@@ -85,7 +91,7 @@ import axios from 'axios'
         console.log('saga', action.payload);
         
         console.log('trip response',tripResponse.data)
-        // yield put({type: 'FETCH_TRIPS', payload: tripResponse.data})
+        yield put({type: 'GET_DETAILS', payload: tripResponse.data})
         
     } catch(error){
         console.log('error updating day', error);

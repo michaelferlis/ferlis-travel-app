@@ -88,7 +88,7 @@ class CurrentTrip extends Component {
 
 
         <>
-          {this.props.reduxState.tripReducers.singleTrip.map(singleTrip => <CurrentTripItem history={this.props.history} key={singleTrip.date} singleTrip={singleTrip} />)}
+          {this.props.reduxState.tripReducers.singleTrip.map(singleTrip => <CurrentTripItem history={this.props.history} key={singleTrip.id} singleTrip={singleTrip} />)}
         </>
 
         {/* <pre>{JSON.stringify(this.props.location.state && this.props.location.state.id)}</pre>

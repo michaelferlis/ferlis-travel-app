@@ -35,7 +35,9 @@ class NewTrip extends Component {
             tripComments: ''
         }
     }
-
+    componentDidMount () {
+        this.getCurrentDate();
+      } // COULD BREAK!!!!!!!~
 
     addNewDay = event => {
         event.preventDefault();

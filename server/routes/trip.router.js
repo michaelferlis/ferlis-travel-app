@@ -8,7 +8,7 @@ const userStrategy = require('../strategies/user.strategy');
 const router = express.Router();
 router.get('/', rejectUnauthenticated,(req, res) => {
     const queryText = `SELECT * FROM "trips" JOIN "trip_days"
-    ON "trip_days"."trip_id" = "trips"."id" ORDER BY "day";`
+    ON "trip_days"."trip_id" = "trips"."id"  ORDER BY "day";`
     pool.query(queryText)
       .then((result) => { res.send(result.rows); })
       .catch((err) => {

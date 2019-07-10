@@ -17,8 +17,9 @@ import GridList from '@material-ui/core/GridList';
 
 const styles = {text: {margin: 200},button: {margin: 20,width: 200, },
     card: {
-        width: '40%',
+        width: '30%',
         height: '300 auto',
+        float: 'left',
        
         margin: '20px auto',
         padding: '5px',
@@ -69,8 +70,8 @@ class Dashboard extends Component {
     return (
       <div>
         
-        {/* <pre>{JSON.stringify(this.props.reduxState.tripReducers.tripNames)}</pre>
-         */}
+        <pre>{JSON.stringify(this.props.reduxState)}</pre>
+        
         
         {/* <Button type='submit' variant="contained" color="black"onClick={this.getNew}>New Trip</Button> */}
         
@@ -80,12 +81,12 @@ class Dashboard extends Component {
          <pre>{JSON.stringify(this.props.reduxState.tripReducers)}</pre>
          <pre>{JSON.stringify(this.props.reduxState.tripReducers.tripNames)}</pre> */}
              <Card style={styles.card}>  
-               <h4>Upcoming Trips :)</h4>
+               <h4>Upcoming Trips</h4>
              {this.props.reduxState.tripReducers.tripNames.map(tripNames => <TripNames history={this.props.history} key={tripNames.id} tripNames={tripNames} complete={"false"} />)}  
              </Card>
 
              <Card style={styles.card}>
-               <h4>Past Trips :(</h4> {this.props.reduxState.tripReducers.tripNames.map(tripNames => <TripNames history={this.props.history} key={tripNames.id} tripNames={tripNames} complete={"true"} />)}
+               <h4>Past Trips</h4> {this.props.reduxState.tripReducers.tripNames.map(tripNames => <TripNames history={this.props.history} key={tripNames.id} tripNames={tripNames} complete={"true"} />)}
              </Card>
          
          <GridList cols={2.5}>
