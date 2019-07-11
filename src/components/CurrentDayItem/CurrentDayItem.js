@@ -87,14 +87,16 @@ class CurrentDayItem extends Component {
         return (
             
                <div>
-
+                   <pre>{JSON.stringify(this.props.singleDay.day)}</pre>
+                    <pre>{JSON.stringify(this.state.day)}</pre>
                     <TextField
+                                type="date"
                                 onChange={this.handleChange}
                                 id="day"
                                 disabled={!this.state.editMode}
                                 fullWidth
-                                label="Date"
-                                value={this.state.date}
+                                label={this.state.day}
+                                value={this.state.day}
                                 margin="normal"
                             />
                              <TextField

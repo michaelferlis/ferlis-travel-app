@@ -70,7 +70,7 @@ class Dashboard extends Component {
     return (
       <div>
         
-        <pre>{JSON.stringify(this.props.reduxState)}</pre>
+        {/* <pre>{JSON.stringify(this.props.reduxState)}</pre> */}
         
         
         {/* <Button type='submit' variant="contained" color="black"onClick={this.getNew}>New Trip</Button> */}

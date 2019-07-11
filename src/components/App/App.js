@@ -20,6 +20,7 @@ import NewTrip from '../NewTrip/NewTrip';
 import CurrentTrip from '../CurrentTrip/CurrentTrip';
 import CurrentDay from '../CurrentDay/CurrentDay';
 import PastTrip from '../PastTrip/PastTrip';
+import GoogleMaps from '../GoogleMaps/GoogleMaps'
 
 
 import './App.css';
