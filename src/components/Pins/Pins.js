@@ -31,10 +31,11 @@ class Pins extends Component {
     componentDidMount () {
         
       } 
-
+     
     addNewPin = event => {
         event.preventDefault();
-        this.props.dispatch({ type: 'ADD_PIN', payload: this.state.pins })
+        this.props.dispatch({ type: 'ADD_PIN', 
+        payload:  {...this.state.pins, user_id: this.props.reduxState.user.id} })
          
         
         this.setState({
@@ -67,14 +68,14 @@ class Pins extends Component {
 
                 
                 
-                <pre>{JSON.stringify(this.state.pins)}</pre>
+                <pre>{JSON.stringify(this.props.reduxState.user.id)}</pre>
                 
                 
                 <Card style={styles.card}>
                     
                       
-                        <TextField style={styles.text} label="Latitude" type='text' value={this.state.pins.lat} onChange={this.handlePinChangeFor('lat')} />
-                        <TextField  style={styles.text}label="Longitude" type='text' value={this.state.pins.long} onChange={this.handlePinChangeFor('long')} />
+                        <TextField style={styles.text} label="Latitude" type='text' value={this.state.pins.pin_lat} onChange={this.handlePinChangeFor('pin_lat')} />
+                        <TextField  style={styles.text}label="Longitude" type='text' value={this.state.pins.pin_long} onChange={this.handlePinChangeFor('pin_long')} />
                         <TextField  style={styles.text}label="Location" type='text' value={this.state.pins.location} onChange={this.handlePinChangeFor('location')} />
                         <Button type='submit' variant="outlined" color="primary" onClick={this.addNewPin}>Log Trip</Button>
                         
