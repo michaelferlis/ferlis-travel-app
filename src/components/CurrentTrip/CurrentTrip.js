@@ -45,8 +45,6 @@ class CurrentTrip extends Component {
       ...this.state, editMode: false,
     })
   }
-
-
   getDashboard = () => {
     this.props.history.push(`/home`)
   }
@@ -69,9 +67,6 @@ class CurrentTrip extends Component {
    })
     
   }
-
-
-
   render() {
     return (
       <div>
@@ -85,8 +80,6 @@ class CurrentTrip extends Component {
           value={this.state.trip_name}
           margin="normal"
         />
-
-
         <>
           {this.props.reduxState.tripReducers.singleTrip.map(singleTrip => <CurrentTripItem history={this.props.history} key={singleTrip.id} singleTrip={singleTrip} />)}
         </>
@@ -94,7 +87,6 @@ class CurrentTrip extends Component {
         {/* <pre>{JSON.stringify(this.props.location.state && this.props.location.state.id)}</pre>
         <pre>{JSON.stringify(this.props.location.state && this.state.editMode)}</pre> */}
         <h4>Trip Comments</h4>
-        {/* <h5>{this.props.location.state && this.props.location.state.trip_comments}</h5> */}
       <Grid container spacing={1}>
         
         <TextField

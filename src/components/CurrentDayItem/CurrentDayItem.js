@@ -87,16 +87,16 @@ class CurrentDayItem extends Component {
         return (
             
                <div>
-                   <pre>{JSON.stringify(this.props.singleDay.day)}</pre>
-                    <pre>{JSON.stringify(this.state.day)}</pre>
+                   
+                    <h4>{this.props.singleDay.day.substring(5, 7) + "/" + this.props.singleDay.day.substring(8, 10) + "/" + this.props.singleDay.day.substring(0, 4)}</h4>
                     <TextField
                                 type="date"
                                 onChange={this.handleChange}
                                 id="day"
                                 disabled={!this.state.editMode}
-                                fullWidth
-                                label={this.state.day}
-                                value={this.state.day}
+                                width="30%"
+                                // label={this.state.day}
+                               
                                 margin="normal"
                             />
                              <TextField
@@ -147,9 +147,9 @@ class CurrentDayItem extends Component {
                             />
     <Grid item xs={9} className="grid-item-text-center">
                             {this.state.editMode ?
-                                <Button size="large" onClick={this.updateDay} variant="contained" color="primary">Save Changes</Button>
+                                <Button size="small" onClick={this.updateDay} variant="contained" color="primary">Save Changes</Button>
                                 :
-                                <Button size="large" onClick={() => { this.setState({ ...this.state, editMode: true }) }} variant="contained" color="primary">Edit Day</Button>
+                                <Button size="small" onClick={() => { this.setState({ ...this.state, editMode: true }) }} variant="contained" color="primary">Edit Day</Button>
                             }
                         </Grid>
                          <Button size="small" onClick={this.handleClickDelete}>

@@ -11,8 +11,9 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
 import DayItem from '../DayItem/DayItem'
+import Dialog from '@material-ui/core/Dialog';
 
-const styles = {text: {margin: 20},button: {margin: 20,width: 200, },
+const styles = {text: {margin: 10 },button: {margin: 20,width: 150, },
     card: {
         width: '100%',
         margin: '20px auto',
@@ -105,6 +106,7 @@ class NewTrip extends Component {
     render() {
         return (
             <div>
+                <Dialog><p>tesst</p></Dialog>
                 <h2>Where to?</h2>
                 <h2>{this.state.newTrip.name}</h2>
 
@@ -117,9 +119,9 @@ class NewTrip extends Component {
                     
                         <TextField id="date"type="date" defaultValue={this.state.date}onChange={this.handleDayChangeFor('date')}/>
                         <TextField style={styles.text} label="City" type='text' value={this.state.newDay.city} onChange={this.handleDayChangeFor('city')} />
-                        <TextField style={styles.text} label="Travel" type='text' value={this.state.newDay.travel} onChange={this.handleDayChangeFor('travel')} />
+                        <TextField style={styles.text} label="Travel Itnerary" type='text' value={this.state.newDay.travel} onChange={this.handleDayChangeFor('travel')} />
                         <TextField style={styles.text} label="Hotel" type='text' value={this.state.newDay.hotel} onChange={this.handleDayChangeFor('hotel')} />
-                        <TextField style={styles.text} label="Reservations" type='text' value={this.state.newDay.reservations} onChange={this.handleDayChangeFor('reservations')} />
+                        <TextField style={styles.text} label="Restaurant Reservations" type='text' value={this.state.newDay.reservations} onChange={this.handleDayChangeFor('reservations')} />
                         <TextField style={styles.text} label="Daily Comments" type='text' value={this.state.newDay.dayComments} onChange={this.handleDayChangeFor('dayComments')} />
                         <Button style={styles.button} type='submit' variant="outlined" color="primary" onClick={this.addNewDay}>Add New Day</Button>
                         

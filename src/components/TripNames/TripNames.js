@@ -28,12 +28,12 @@ class TripItem extends Component {
             <>
 
                 {this.props.tripNames.complete === this.props.complete &&
-                    
-                        <Button style={{display: "block"}}    variant="contained" color="white" onClick={this.getDetails}>{this.props.tripNames.trip_name}</Button>
-                    
-                    
+
+                    <Button style={{ display: "block" }} variant="contained" color="white" onClick={this.getDetails}>{this.props.tripNames.trip_name}</Button>
+
+
                 }
-                
+
 
 
             </>
