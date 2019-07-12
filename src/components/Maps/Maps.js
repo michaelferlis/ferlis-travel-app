@@ -20,10 +20,11 @@ class Map extends Component{
                     defaultOptions={{
                         streetViewControl: false,
                         fullscreenControl: false,
-                        controlSize: 20,
-                        minZoom: 9,
+                        // mapTypeId: 'hybrid',
+                        controlSize: 100,
+                        minZoom: 90,
                     }}
-                    defaultZoom={2.5}
+                    defaultZoom={2.3}
 
                     defaultCenter={{ lat: this.props.defaultLat, lng: this.props.defaultLong }}
                 >

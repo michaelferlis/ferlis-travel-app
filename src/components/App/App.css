@@ -3,12 +3,12 @@ body {
     font-family: 'Helvetica Neue';
     margin: 10px;
     /* padding: -9px; */
-    background-image: url("world.jpg"); 
-    background-repeat: no-repeat;
+    /* background-image: url("world.jpg"); 
+    background-repeat: no-repeat; */
   background-size: 1100px 660px;
     /* background-repeat: no-repeat;
     background-size: auto; */
-    background-color: #8DB3E0;
+    background-color: #435993;
    
 }
 
