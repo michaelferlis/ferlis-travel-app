@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import { connect } from 'react-redux';
 
 
 import {
@@ -9,8 +9,13 @@ import {
     Marker,
 } from 'react-google-maps'
 
+
 class Map extends Component{
 
+    componentDidMount() {
+        this.props.dispatch({type: 'FETCH_PINS'})
+    }
+   
 
     render(){
         return(
@@ -20,7 +25,7 @@ class Map extends Component{
                     defaultOptions={{
                         streetViewControl: false,
                         fullscreenControl: false,
-                        // mapTypeId: 'hybrid',
+                        mapTypeId: 'hybrid',
                         controlSize: 100,
                         minZoom: 90,
                     }}
@@ -28,17 +33,21 @@ class Map extends Component{
 
                     defaultCenter={{ lat: this.props.defaultLat, lng: this.props.defaultLong }}
                 >
-{/* 
-                    {this.props.pinList && this.props.pinList.map(pin => (
-                        <Marker
-                            key={pin.pin_id}
-                            position={{
-                                lat: Number(pin.latitude),
-                                lng: Number(pin.longitude),
-                            }}
-                            onClick={() => { this.setSelectedPin(pin) }}
-                        />
-                    ))} */}
+                    
+                  {this.props.reduxState.tripReducers.pinList && this.props.reduxState.tripReducers.pinList.map(pin => (
+                         
+                         
+                         <Marker
+                             key={pin.pin_id}
+                             position={{
+                                 lat: Number(pin.pin_lat),
+                                 lng: Number(pin.pin_long),
+                                 title: 'hello'
+                             }}
+                            //  onClick={() => { this.setSelectedPin(pin) }}
+                         />
+                     ))}
+                     <pre>{JSON.stringify(this.props.reduxState.tripReducers.pinList)}</pre> 
                 </GoogleMap>
 
         )
@@ -49,4 +58,7 @@ class Map extends Component{
     
 const WrappedMap = withScriptjs(withGoogleMap(Map));
 
-export default WrappedMap;
+const mapStateToProps = reduxState => ({
+    reduxState
+});
+export default connect(mapStateToProps)(WrappedMap);

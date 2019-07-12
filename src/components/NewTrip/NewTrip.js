@@ -149,7 +149,7 @@ class NewTrip extends Component {
                 <TextField style={styles.text} label="Trip Comments" type='text' value={this.state.newTrip.tripComments} onChange={this.handleTripChangeFor('tripComments')} />
                 
                 <p>{this.state.newTrip.tripComments}</p>
-                <Button style={styles.button} type='submit' variant="outlined" color="primary" onClick={this.addTrip}>Save Trip</Button>
+                <Button  type='submit' variant="outlined" color="primary" onClick={this.addTrip}>Save Trip</Button>
             </div>
         );
     }

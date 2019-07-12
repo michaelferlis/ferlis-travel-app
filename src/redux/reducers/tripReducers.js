@@ -58,6 +58,15 @@ const singleDay = (state = [], action) => {
     return state;
 }
 
+const pinList = (state = [], action) => {
+    if (action.type === 'SET_PINS'){
+        console.log(`The day was ${action.payload}`);
+        return action.payload;
+    } 
+
+    return state;
+}
+
 export default combineReducers({
     addDay,
     addTripName,
@@ -65,6 +74,7 @@ export default combineReducers({
     tripNames,
     singleTrip,
     singleDay,
+    pinList,
   });
   
   

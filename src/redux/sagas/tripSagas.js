@@ -29,6 +29,18 @@ import axios from 'axios'
     
   }
 
+  function* fetchPins (action) {
+    try {
+        const pinResponse = yield axios.get('/api/pins');
+        yield put({type: 'SET_PINS', payload: pinResponse.data})
+        console.log(pinResponse.data);
+    } catch(error){
+        console.log('error fetching trips', error);
+    }
+    
+    
+  }
+
   function* fetchTripDetails (action) {
     try {
         const tripResponse = yield axios.get(`/api/details/${action.payload}`);
@@ -64,6 +76,16 @@ import axios from 'axios'
   function* addDay(action) {
     try {
       yield axios.post('/api/name', action.payload);
+    console.log(action.payload);
+    
+    } catch (error) {
+      console.log('error with posting a trip:', error);
+    }
+  }
+
+  function* addPin(action) {
+    try {
+      yield axios.post('/api/pins', action.payload);
     console.log(action.payload);
     
     } catch (error) {
@@ -143,6 +165,8 @@ function* registrationSaga() {
     yield takeLatest('UPDATE_TRIP', updateTrip);
     yield takeLatest('ADD_SINGLE_DAY', addDay);
     yield takeLatest('MARK_COMPLETE', markComplete);
+    yield takeLatest('FETCH_PINS', fetchPins);
+    yield takeLatest('ADD_PIN', addPin);
   }
   
   export default registrationSaga;

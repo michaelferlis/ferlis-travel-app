@@ -21,6 +21,7 @@ import CurrentTrip from '../CurrentTrip/CurrentTrip';
 import CurrentDay from '../CurrentDay/CurrentDay';
 import PastTrip from '../PastTrip/PastTrip';
 import GMaps from '../GMaps/GMaps'
+import Pins from '../Pins/Pins'
 
 
 
@@ -56,6 +57,11 @@ class App extends Component {
               exact
               path="/home"
               component={GMaps}
+            />
+             <ProtectedRoute
+              exact
+              path="/pins"
+              component={Pins}
             />
             {/* This works the same as the other protected route, except that if the user is logged in,
             they will see the info page instead. */}
