@@ -20,7 +20,8 @@ import NewTrip from '../NewTrip/NewTrip';
 import CurrentTrip from '../CurrentTrip/CurrentTrip';
 import CurrentDay from '../CurrentDay/CurrentDay';
 import PastTrip from '../PastTrip/PastTrip';
-import GoogleMaps from '../GoogleMaps/GoogleMaps'
+import GMaps from '../GMaps/GMaps'
+
 
 
 import './App.css';
@@ -28,8 +29,6 @@ import './App.css';
 class App extends Component {
   componentDidMount () {
     this.props.dispatch({type: 'FETCH_USER'})
-    // this.props.dispatch({type: 'FETCH_TRIPS'})
-    // this.props.dispatch({type: 'FETCH_TRIP_NAMES'})
   }
 
   render() {
@@ -56,7 +55,7 @@ class App extends Component {
             <ProtectedRoute
               exact
               path="/home"
-              component={Dashboard}
+              component={GMaps}
             />
             {/* This works the same as the other protected route, except that if the user is logged in,
             they will see the info page instead. */}
@@ -65,11 +64,11 @@ class App extends Component {
               path="/info"
               component={InfoPage}
             />
-             {/* <ProtectedRoute
+             <ProtectedRoute
               exact
               path="/dashboard"
               component={Dashboard}
-            /> */}
+            />
             <ProtectedRoute
               exact
               path="/new"

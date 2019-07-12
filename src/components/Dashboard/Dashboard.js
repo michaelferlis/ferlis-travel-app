@@ -12,6 +12,7 @@ import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
 import GridList from '@material-ui/core/GridList';
 
+import GoogleMaps from '../Maps';
 
 
 
@@ -57,15 +58,6 @@ class Dashboard extends Component {
       }
 
       
-      // sendEmail=()=> {
-      //   console.log('send email working');
-        
-      //   sgMail.send(msg);
-      // }
-      // get=()=> {
-      //   this.props.dispatch({type: 'FETCH_TRIPS'})
-      // }
-      
   render() {
     return (
       <div>
@@ -99,6 +91,7 @@ class Dashboard extends Component {
           </GridListTile>
         
       </GridList>
+      
       </div>
     );
   }
