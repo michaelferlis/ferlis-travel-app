@@ -32,7 +32,7 @@ app.use('/api/newtrip', newTripRouter);
 app.use('/api/name', TripNameRouter);
 app.use('/api/details', TripDetailsRouter);
 app.use('/api/daydetails', TripDayDetailsRouter);
-app.use('api/pins', pinsRouter)
+app.use('/api/pins', pinsRouter)
 
 
 
