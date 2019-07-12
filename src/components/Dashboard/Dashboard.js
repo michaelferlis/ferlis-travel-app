@@ -6,26 +6,30 @@ import TripNames from '../TripNames/TripNames'
 import Card from '@material-ui/core/Card';
 // import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import CardContent from '@material-ui/core/CardContent'
-import Typography from '@material-ui/core/Typography'
-import GridListTile from '@material-ui/core/GridListTile';
-import GridListTileBar from '@material-ui/core/GridListTileBar';
-import GridList from '@material-ui/core/GridList';
 
-import GoogleMaps from '../Maps';
+
+import './Dashboard.css';
 
 
 
-const styles = {text: {margin: 200},button: {margin: 20,width: 200, },
-    card: {
-        width: '30%',
-        height: '300 auto',
-        float: 'left',
-       
+const styles = 
+{text: {color: 'white'},
+
+
+button: {
+  textAlign: 'center',
+  width: 200,color: 'white' 
+
+},
+
+card: {
+        width: '50%',
+        height: '600%',
+        color: 'white',
+       textAlign: 'center',
         margin: '20px auto',
-        padding: '5px',
+        padding: '10px',
         backgroundColor: 'transparent',
-        
         
     }
 }
@@ -60,7 +64,8 @@ class Dashboard extends Component {
       
   render() {
     return (
-      <div>
+     
+      <div className="dashboard">
         
         {/* <pre>{JSON.stringify(this.props.reduxState)}</pre> */}
         
@@ -72,25 +77,20 @@ class Dashboard extends Component {
          {/* <pre>{JSON.stringify(this.props.reduxState.tripReducers.tripListAll)}</pre>
          <pre>{JSON.stringify(this.props.reduxState.tripReducers)}</pre>
          <pre>{JSON.stringify(this.props.reduxState.tripReducers.tripNames)}</pre> */}
-             <Card style={styles.card}>  
+         <Grid container spacing={2}>
+           <Grid item xs={6}>
+             <Card style={styles.card} >  
                <h4>Upcoming Trips</h4>
              {this.props.reduxState.tripReducers.tripNames.map(tripNames => <TripNames history={this.props.history} key={tripNames.id} tripNames={tripNames} complete={"false"} />)}  
              </Card>
-
-             <Card style={styles.card}>
+             </Grid>
+             <Grid item xs={6}>
+             <Card style={styles.card} >
                <h4>Past Trips</h4> {this.props.reduxState.tripReducers.tripNames.map(tripNames => <TripNames history={this.props.history} key={tripNames.id} tripNames={tripNames} complete={"true"} />)}
              </Card>
+             </Grid>
+             </Grid>
          
-         <GridList cols={2.5}>
-        
-          <GridListTile >
-            test
-            {/* <GridListTileBar
-             
-            /> */}
-          </GridListTile>
-        
-      </GridList>
       
       </div>
     );

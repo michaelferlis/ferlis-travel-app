@@ -86,7 +86,7 @@ class CurrentDayItem extends Component {
     render() {
         return (
             
-               <div>
+               <Grid item xs={12}>
                    
                     <h4>{this.props.singleDay.day.substring(5, 7) + "/" + this.props.singleDay.day.substring(8, 10) + "/" + this.props.singleDay.day.substring(0, 4)}</h4>
                     <TextField
@@ -145,7 +145,7 @@ class CurrentDayItem extends Component {
                                 value={this.state.dayComments}
                                 margin="normal"
                             />
-    <Grid item xs={9} className="grid-item-text-center">
+    <Grid >
                             {this.state.editMode ?
                                 <Button size="small" onClick={this.updateDay} variant="contained" color="primary">Save Changes</Button>
                                 :
@@ -156,7 +156,7 @@ class CurrentDayItem extends Component {
                              Delete Day
                          </Button> 
                        
-                    </div>   
+                    </Grid>   
                         
   
            

@@ -3,7 +3,18 @@ import React, { Component } from 'react'
 import Button from '@material-ui/core/Button';
 import { connect } from 'react-redux'
 
+const styles = 
+{text: {color: 'white'},
 
+
+button: {
+    fontSize: '20px',
+  width: '100%', color: 'white',
+  textAlign: 'center',
+
+},
+
+}
 
 class TripItem extends Component {
     getDetails = (action) => {
@@ -22,6 +33,8 @@ class TripItem extends Component {
 
     }
 
+    
+
 
     render() {
         return (
@@ -29,7 +42,7 @@ class TripItem extends Component {
 
                 {this.props.tripNames.complete === this.props.complete &&
 
-                    <Button style={{ display: "block" }} variant="contained" color="white" onClick={this.getDetails}>{this.props.tripNames.trip_name}</Button>
+                    <Button style={styles.button}  onClick={this.getDetails}>{this.props.tripNames.trip_name}</Button>
 
 
                 }

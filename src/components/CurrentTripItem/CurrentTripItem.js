@@ -41,10 +41,10 @@ class TripItem extends Component {
             <div>
                 <h2>{this.props.tripName}</h2>
                 
-            <Grid container spacing={300}>
+            <Grid container spacing={6}>
 
-        <Grid>
-          <Paper style={styles.card} onClick={this.handleClickDay}>
+        <Grid item xs={6}>
+          <Paper onClick={this.handleClickDay}>
            
            
           {this.props.singleTrip.day.substring(5, 7) + "/" + this.props.singleTrip.day.substring(8, 10) + "/" + this.props.singleTrip.day.substring(0, 4)}

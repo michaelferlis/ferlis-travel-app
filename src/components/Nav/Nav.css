@@ -2,7 +2,7 @@
     font-size: 24px;
     font-weight: 700;
     display: inline-block;
-    color: black;
+    color: white;
     padding-left: 10px;
 }
 
@@ -13,7 +13,7 @@
 
 .nav-link {
   float: left;
-  color: black;
+  color: rgb(237, 234, 234);
   background-color: transparent;
   text-align: center;
   padding: 17px 10px;
@@ -28,7 +28,7 @@
 }
 
 .nav-link:hover {
-  /* background-color: #6071ce1e; */
+  background-color: #6071ce1e;
 }
 
 .nav-right {

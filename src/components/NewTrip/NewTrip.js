@@ -17,6 +17,7 @@ const styles = {text: {margin: 10 },button: {margin: 20,width: 150, },
     card: {
         width: '100%',
         margin: '20px auto',
+        background: 'transparent'
     }
 }
 

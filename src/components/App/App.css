@@ -2,19 +2,35 @@ body {
     /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
     font-family: 'Helvetica Neue';
     margin: 10px;
-    /* padding: -9px; */
-    /* background-image: url("world.jpg"); 
-    background-repeat: no-repeat; */
-  background-size: 1100px 660px;
-    /* background-repeat: no-repeat;
-    background-size: auto; */
+    padding: -9px;  
+    min-height: 100vh;
+ 
+  background-color: #241F1F;
+  /* background-position-y: -30% */
+  /* background-repeat: auto; */
+    /* background-size: auto;
+    background-color: #435993; */
     /* background-color: #435993; */
    
+}
+
+
+
+.mainDiv{
+  background-image: url("map-xl.jpg"); 
+  background-repeat: no-repeat;
+background-size: 100%, 100% ;
+height: 100%;
 }
 
 .alert {
     background-color: #b343439d;
     margin: 50px;
+}
+
+dashboard {
+  background-color: #b343439d;
+  height: 1000%;
 }
 
 form {
@@ -25,6 +41,7 @@ form {
     padding: 25px;
     border-radius: 2px;
 }
+
 
 input {
     margin: 5px;
@@ -55,4 +72,8 @@ input {
     outline:0;
     border-bottom:1px solid #444; 
     cursor: pointer;
+}
+#react-root{
+    
+  min-height: 100vh;
 }

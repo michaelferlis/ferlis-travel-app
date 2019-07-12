@@ -5,6 +5,8 @@ import CurrentTripItem from '../CurrentTripItem/CurrentTripItem'
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid'
+import Card from '@material-ui/core/Card'
+import Paper from '@material-ui/core/Paper'
 
 class CurrentTrip extends Component {
 
@@ -55,7 +57,7 @@ class CurrentTrip extends Component {
         ...this.state, trip_id: this.props.location.state.id
       }
     })
-    this.props.history.push(`/home`)  
+    this.props.history.push(`/dashboard`)  
   }
 
   markComplete = () =>{
@@ -65,13 +67,18 @@ class CurrentTrip extends Component {
       id: this.props.location.state.id
      }
    })
-    
+   this.props.history.push(`/dashboard`)  
   }
   render() {
     return (
+      
       <div>
         <h2>{this.props.location.state && this.props.location.state.trip_name}</h2>
-        <TextField
+        <Button size="small" onClick={this.addDay}variant="contained" color="white">
+                             Add Day
+                         </Button> 
+        <TextField style={{
+        }}
           onChange={this.handleChange}
           id="trip_name"
           disabled={!this.state.editMode}
@@ -87,18 +94,22 @@ class CurrentTrip extends Component {
         {/* <pre>{JSON.stringify(this.props.location.state && this.props.location.state.id)}</pre>
         <pre>{JSON.stringify(this.props.location.state && this.state.editMode)}</pre> */}
         <h4>Trip Comments</h4>
-      <Grid container spacing={1}>
-        
+      <Grid container>
+        <Grid item xs={12}>
+        <Paper>
         <TextField
           onChange={this.handleChange}
           id="trip_comments"
           disabled={!this.state.editMode}
           fullWidth
+          multiline
+          rows='10'
           label="Trip Comments"
           value={this.state.trip_comments}
           margin="normal"
         />
-        
+        </Paper>
+        </Grid>
         </Grid>
         <Grid item xs={9} className="grid-item-text-center">
                             {this.state.editMode ?
@@ -107,9 +118,7 @@ class CurrentTrip extends Component {
                                 <Button size="small" onClick={() => { this.setState({ ...this.state, editMode: true }) }} variant="contained" color="primary">Edit Trip</Button>
                             }
                             </Grid>
-                            <Button size="small" onClick={this.addDay}variant="contained" color="white">
-                             Add Day
-                         </Button> 
+                            
                          <Button size="small" onClick={this.markComplete}variant="contained" color="white">
                             Trip Complete
                          </Button> 
