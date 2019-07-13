@@ -16,6 +16,10 @@ const styles = {text: {size: '8px' },
         padding: '5px',
        
         
+    },
+    paper: {
+        background: 'transparent',
+        color: 'white',
     }
 }
 
@@ -44,7 +48,7 @@ class TripItem extends Component {
             <Grid container spacing={6}>
 
         <Grid item xs={6}>
-          <Paper onClick={this.handleClickDay}>
+          <Paper style={styles.paper} onClick={this.handleClickDay}>
            
            
           {this.props.singleTrip.day.substring(5, 7) + "/" + this.props.singleTrip.day.substring(8, 10) + "/" + this.props.singleTrip.day.substring(0, 4)}

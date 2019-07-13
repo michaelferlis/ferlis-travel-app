@@ -14,15 +14,15 @@ class DayItem extends Component {
         return (
             <>
                 <TableRow >
-                    <TableCell>{this.props.day.date}</TableCell>
-                    <TableCell>{this.props.day.city}</TableCell>
-                    <TableCell>{this.props.day.travel}</TableCell>
-                    <TableCell>{this.props.day.hotel}</TableCell>
-                    <TableCell>{this.props.day.reservations}</TableCell>
-                    <TableCell>{this.props.day.dayComments}</TableCell>
+                    <TableCell style={{color: 'white'}}>{this.props.day.date}</TableCell>
+                    <TableCell style={{color: 'white'}}>{this.props.day.city}</TableCell>
+                    <TableCell style={{color: 'white'}}>{this.props.day.travel}</TableCell>
+                    <TableCell style={{color: 'white'}}>{this.props.day.hotel}</TableCell>
+                    <TableCell style={{color: 'white'}}>{this.props.day.reservations}</TableCell>
+                    <TableCell style={{color: 'white'}}>{this.props.day.dayComments}</TableCell>
                     
                     <TableCell>
-                        <Button size="small" onClick={this.handleDelete}>
+                        <Button style={{color: 'white'}} size="small" onClick={this.handleDelete}>
                             Delete
                         </Button>
                     </TableCell>

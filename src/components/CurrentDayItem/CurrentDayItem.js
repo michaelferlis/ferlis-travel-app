@@ -8,34 +8,34 @@ import Grid from '@material-ui/core/Grid';
 
 
 
-// const styles = {text: {size: '8px' },
-//     comments: {
-//         width: '1000px',
-//         margin: '5px',
-//         padding: '5px',
-        
-//     }
-// }
+const styles = {label: {color: 'white' },
+    comments: {
+        width: '1000px',
+        margin: '5px',
+        padding: '5px',
+
+    }
+}
 
 
 
 class CurrentDayItem extends Component {
 
     state = {
-         
-            day: '',
-            city: '',
-            travel: '',
-            hotel: '',
-            reservations: '',
-            dayComments: '',
-        
+
+        day: '',
+        city: '',
+        travel: '',
+        hotel: '',
+        reservations: '',
+        dayComments: '',
+
     }
- 
-    componentDidMount () {
-        console.log('test',this.state);
+
+    componentDidMount() {
+        console.log('test', this.state);
         this.setStateData()
-        
+
 
     }
     handleChange = (event) => {
@@ -46,7 +46,7 @@ class CurrentDayItem extends Component {
 
     setStateData = () => {
         console.log('set state test');
-        
+
         this.props.singleDay &&
             this.setState({
                 day: this.props.singleDay.day,
@@ -57,11 +57,11 @@ class CurrentDayItem extends Component {
                 dayComments: this.props.singleDay.day_comments,
                 editMode: false,
                 id: this.props.singleDay.id,
-               
+
             })
     }
 
-    updateDay = () =>{
+    updateDay = () => {
         console.log(this.state);
         this.props.dispatch({
             type: 'UPDATE_DAY',
@@ -72,7 +72,7 @@ class CurrentDayItem extends Component {
         })
     }
 
-    handleClickDelete = () =>{
+    handleClickDelete = () => {
         console.log('button');
         this.props.dispatch({
             type: 'DELETE_DAY',
@@ -80,86 +80,89 @@ class CurrentDayItem extends Component {
         })
         this.props.history.push(`/home`)
     }
-  
-    
+
+
 
     render() {
         return (
-            
-               <Grid item xs={12}>
-                   
-                    <h4>{this.props.singleDay.day.substring(5, 7) + "/" + this.props.singleDay.day.substring(8, 10) + "/" + this.props.singleDay.day.substring(0, 4)}</h4>
-                    <TextField
-                                type="date"
-                                onChange={this.handleChange}
-                                id="day"
-                                disabled={!this.state.editMode}
-                                width="30%"
-                                // label={this.state.day}
-                               
-                                margin="normal"
-                            />
-                             <TextField
-                                onChange={this.handleChange}
-                                id="city"
-                                disabled={!this.state.editMode}
-                                fullWidth
-                                label="City"
-                                value={this.state.city}
-                                margin="normal"
-                            />
-                             <TextField
-                                onChange={this.handleChange}
-                                id="travel"
-                                disabled={!this.state.editMode}
-                                fullWidth
-                                label="Travel Information"
-                                value={this.state.travel}
-                                margin="normal"
-                                
-                            />
-                             <TextField
-                                onChange={this.handleChange}
-                                id="hotel"
-                                disabled={!this.state.editMode}
-                                fullWidth
-                                label="Hotel Information"
-                                value={this.state.hotel}
-                                margin="normal"
-                            />
-                             <TextField
-                                onChange={this.handleChange}
-                                id="reservations"
-                                disabled={!this.state.editMode}
-                                fullWidth
-                                label="Restaurant Reservations"
-                                value={this.state.reservations}
-                                margin="normal"
-                            />
-                             <TextField
-                                onChange={this.handleChange}
-                                id="dayComments"
-                                disabled={!this.state.editMode}
-                                fullWidth
-                                label="Daily Comments"
-                                value={this.state.dayComments}
-                                margin="normal"
-                            />
-    <Grid >
-                            {this.state.editMode ?
-                                <Button size="small" onClick={this.updateDay} variant="contained" color="primary">Save Changes</Button>
-                                :
-                                <Button size="small" onClick={() => { this.setState({ ...this.state, editMode: true }) }} variant="contained" color="primary">Edit Day</Button>
-                            }
-                        </Grid>
-                         <Button size="small" onClick={this.handleClickDelete}>
-                             Delete Day
-                         </Button> 
-                       
-                    </Grid>   
-                        
-  
-           
+
+            <Grid item xs={12}>
+
+                <h4>{this.props.singleDay.day.substring(5, 7) + "/" + this.props.singleDay.day.substring(8, 10) + "/" + this.props.singleDay.day.substring(0, 4)}</h4>
+                <TextField
+                    type="date"
+                    onChange={this.handleChange}
+                    id="day"
+                    disabled={!this.state.editMode}
+                    width="30%"
+                    // label={this.state.day}
+
+                    margin="normal"
+                />
+                <TextField
+                    onChange={this.handleChange}
+                    id="city"
+                    disabled={!this.state.editMode}
+                    fullWidth
+                    label="City"
+
+                    value={this.state.city}
+                    margin="normal"
+                />
+                <TextField
+                    onChange={this.handleChange}
+                    id="travel"
+                    disabled={!this.state.editMode}
+                    fullWidth
+                    label="Travel Information"
+                    value={this.state.travel}
+                    margin="normal"
+
+                />
+                <TextField
+                    onChange={this.handleChange}
+                    id="hotel"
+                    disabled={!this.state.editMode}
+                    fullWidth
+                    label="Hotel Information"
+                    value={this.state.hotel}
+                    margin="normal"
+                />
+                <TextField style={styles.label}
+                    onChange={this.handleChange}
+                    id="reservations"
+                    disabled={!this.state.editMode}
+                    fullWidth
+                    label="Restaurant Reservations"
+                    value={this.state.reservations}
+                    margin="normal"
+                />
+                <TextField
+                    onChange={this.handleChange}
+                    id="dayComments"
+                    disabled={!this.state.editMode}
+                    fullWidth
+                    multiline
+                    rows='10'
+                    label="Daily Comments"
+                    value={this.state.dayComments}
+                    margin="normal"
+                />
+                <Grid >
+                    {this.state.editMode ?
+                        <Button size="small" onClick={this.updateDay} variant="contained" color="primary">Save Changes</Button>
+                        :
+                        <Button size="small" onClick={() => { this.setState({ ...this.state, editMode: true }) }} variant="contained" color="primary">Edit Day</Button>
+                    }
+                </Grid>
+                <Button size="small" onClick={this.handleClickDelete}>
+                    Delete Day
+                         </Button>
+
+            </Grid>
+
+
+
         )
     }
 }

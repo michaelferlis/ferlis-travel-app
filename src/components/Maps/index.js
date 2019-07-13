@@ -23,7 +23,7 @@ componentDidMount(){
             <WrappedMap
                 googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${MAPS_KEY}&v=3.exp&libraries=geometry,drawing,places`}
                 loadingElement={<div style={{ height: "70vh" }} />}
-                containerElement={<div style={{ height: "70vh" }} />}
+                containerElement={<div style={{ height: "100vh" }} />}
                 mapElement={<div style={{ height: "100%" }} />}
                 defaultLat={12.977753}
                 defaultLong={0.265015}

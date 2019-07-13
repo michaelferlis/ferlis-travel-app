@@ -73,10 +73,8 @@ class CurrentTrip extends Component {
     return (
       
       <div>
-        <h2>{this.props.location.state && this.props.location.state.trip_name}</h2>
-        <Button size="small" onClick={this.addDay}variant="contained" color="white">
-                             Add Day
-                         </Button> 
+        <h3 style={{color: "white"}}>{this.props.location.state && this.props.location.state.trip_name}</h3>
+      
         <TextField style={{
         }}
           onChange={this.handleChange}
@@ -91,12 +89,10 @@ class CurrentTrip extends Component {
           {this.props.reduxState.tripReducers.singleTrip.map(singleTrip => <CurrentTripItem history={this.props.history} key={singleTrip.id} singleTrip={singleTrip} />)}
         </>
 
-        {/* <pre>{JSON.stringify(this.props.location.state && this.props.location.state.id)}</pre>
-        <pre>{JSON.stringify(this.props.location.state && this.state.editMode)}</pre> */}
-        <h4>Trip Comments</h4>
+        <h4 style={{color: 'white'}}>Trip Comments</h4>
       <Grid container>
         <Grid item xs={12}>
-        <Paper>
+        <Paper style={{background: 'transparent'}}>
         <TextField
           onChange={this.handleChange}
           id="trip_comments"
@@ -121,6 +117,9 @@ class CurrentTrip extends Component {
                             
                          <Button size="small" onClick={this.markComplete}variant="contained" color="white">
                             Trip Complete
+                         </Button> 
+                         <Button size="small" onClick={this.addDay}variant="contained" color="white">
+                             Add Day
                          </Button> 
                          </div>
     );

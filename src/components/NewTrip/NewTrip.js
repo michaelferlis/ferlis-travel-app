@@ -12,12 +12,26 @@ import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
 import DayItem from '../DayItem/DayItem'
 import Dialog from '@material-ui/core/Dialog';
+import { whileStatement } from '@babel/types';
 
-const styles = {text: {margin: 10 },button: {margin: 20,width: 150, },
+const styles = {
+    text: {
+        margin: 20,
+        color: 'white',
+        labelWidth: '200px',
+    },
+    
+    button: {margin: 20,width: 150, color: 'white' },
     card: {
         width: '100%',
         margin: '20px auto',
-        background: 'transparent'
+        background: 'transparent',
+        color: 'white',
+        label: 'white',
+        labelWidth: '200px',
+    },
+    table: {
+        color: 'white',
     }
 }
 
@@ -107,15 +121,15 @@ class NewTrip extends Component {
     render() {
         return (
             <div>
-                <Dialog><p>tesst</p></Dialog>
-                <h2>Where to?</h2>
+                
+                <h2 style={{color: 'white'}}>Where to?</h2>
                 <h2>{this.state.newTrip.name}</h2>
 
                 <TextField style={styles.text} label="Trip Name" type='text' value={this.state.newTrip.name} onChange={this.handleTripChangeFor('name')} />
                 
                 {/* <pre>{JSON.stringify(this.props.reduxState.tripReducers)}</pre>
                 <pre>{JSON.stringify(this.props.reduxState.tripReducers.dayList)}</pre> */}
-                <h3>Add New Day to Trip</h3>
+                <h3 style={{color: 'white'}}>Add New Day to Trip</h3>
                 <Card style={styles.card}>
                     
                         <TextField id="date"type="date" defaultValue={this.state.date}onChange={this.handleDayChangeFor('date')}/>
@@ -124,21 +138,21 @@ class NewTrip extends Component {
                         <TextField style={styles.text} label="Hotel" type='text' value={this.state.newDay.hotel} onChange={this.handleDayChangeFor('hotel')} />
                         <TextField style={styles.text} label="Restaurant Reservations" type='text' value={this.state.newDay.reservations} onChange={this.handleDayChangeFor('reservations')} />
                         <TextField style={styles.text} label="Daily Comments" type='text' value={this.state.newDay.dayComments} onChange={this.handleDayChangeFor('dayComments')} />
-                        <Button style={styles.button} type='submit' variant="outlined" color="primary" onClick={this.addNewDay}>Add New Day</Button>
+                        <Button style={{color: 'white'}} size="medium" type='submit' variant="outlined" onClick={this.addNewDay}>Add New Day</Button>
                         
 
                     
                 </Card>
-                <Table>
+                <Table >
                     <TableHead>
 
                         <TableRow>
-                            <TableCell>Date</TableCell>
-                            <TableCell>City</TableCell>
-                            <TableCell>Travel Information</TableCell>
-                            <TableCell>Hotel Information</TableCell>
-                            <TableCell>Restaurant Reservations</TableCell>
-                            <TableCell>Comments</TableCell>
+                            <TableCell style={{color: 'white'}}>Date</TableCell>
+                            <TableCell style={{color: 'white'}}>City</TableCell>
+                            <TableCell style={{color: 'white'}}>Travel Information</TableCell>
+                            <TableCell style={{color: 'white'}}>Hotel Information</TableCell>
+                            <TableCell style={{color: 'white'}}>Restaurant Reservations</TableCell>
+                            <TableCell style={{color: 'white'}}>Comments</TableCell>
                         </TableRow>
 
                     </TableHead>
@@ -147,10 +161,10 @@ class NewTrip extends Component {
                     </TableBody>
                 </Table>
 
-                <TextField style={styles.text} label="Trip Comments" type='text' value={this.state.newTrip.tripComments} onChange={this.handleTripChangeFor('tripComments')} />
+                <TextField style={{color: 'white'}} label="Trip Comments" type='text' value={this.state.newTrip.tripComments} onChange={this.handleTripChangeFor('tripComments')} />
                 
                 <p>{this.state.newTrip.tripComments}</p>
-                <Button  type='submit' variant="outlined" color="primary" onClick={this.addTrip}>Save Trip</Button>
+                <Button style={{color: 'white'}} size="medium" type='submit' variant="outlined" color="white" onClick={this.addTrip}>Save Trip</Button>
             </div>
         );
     }

@@ -12,7 +12,14 @@ const styles = {text: {margin: 10 },button: {margin: 20,width: 150, },
         width: '100%',
         height: '20%',
         margin: '20px auto',
-    }
+        background: 'transparent',
+        labelColor: 'white',
+        
+    },
+    floatingLabelFocusStyle: {
+        color: "white"
+    },
+    input: {color: 'white'}
 }
 
 
@@ -64,12 +71,10 @@ class Pins extends Component {
         return (
             <div>
                 
-                <h2>Where have you been?</h2>
+                <h4 style={{color: 'white'}}>Where have you been?</h4>
              
 
                 
-                
-                <pre>{JSON.stringify(this.props.reduxState.user.id)}</pre>
                 
                 
                 <Card style={styles.card}>
@@ -78,7 +83,7 @@ class Pins extends Component {
                         <TextField style={styles.text} label="Latitude" type='text' value={this.state.pins.pin_lat} onChange={this.handlePinChangeFor('pin_lat')} />
                         <TextField  style={styles.text}label="Longitude" type='text' value={this.state.pins.pin_long} onChange={this.handlePinChangeFor('pin_long')} />
                         <TextField  style={styles.text}label="Location" type='text' value={this.state.pins.location} onChange={this.handlePinChangeFor('location')} />
-                        <Button type='submit' variant="outlined" color="primary" onClick={this.addNewPin}>Log Trip</Button>
+                        <Button type='submit'style={{color: 'white'}} variant="outlined"  onClick={this.addNewPin}>Log Trip</Button>
                         
 
                     

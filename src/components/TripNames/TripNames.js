@@ -8,7 +8,7 @@ const styles =
 
 
 button: {
-    fontSize: '20px',
+fontSize: '18px',
   width: '100%', color: 'white',
   textAlign: 'center',
 

@@ -10,6 +10,8 @@ import {
 } from 'react-google-maps'
 
 
+
+
 class Map extends Component{
 
     componentDidMount() {
@@ -19,8 +21,7 @@ class Map extends Component{
 
     render(){
         return(
-
-
+  
 <GoogleMap
                     defaultOptions={{
                         streetViewControl: false,

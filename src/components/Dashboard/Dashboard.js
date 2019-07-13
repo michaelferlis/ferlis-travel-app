@@ -13,7 +13,10 @@ import './Dashboard.css';
 
 
 const styles = 
-{text: {color: 'white'},
+{text: {color: 'white',
+  
+},
+
 
 
 button: {
@@ -23,13 +26,14 @@ button: {
 },
 
 card: {
-        width: '50%',
+        width: '90%',
         height: '600%',
         color: 'white',
        textAlign: 'center',
         margin: '20px auto',
         padding: '10px',
         backgroundColor: 'transparent',
+        fontSize: '24px',
         
     }
 }
@@ -80,7 +84,7 @@ class Dashboard extends Component {
          <Grid container spacing={2}>
            <Grid item xs={6}>
              <Card style={styles.card} >  
-               <h4>Upcoming Trips</h4>
+               <h4 >Upcoming Trips</h4>
              {this.props.reduxState.tripReducers.tripNames.map(tripNames => <TripNames history={this.props.history} key={tripNames.id} tripNames={tripNames} complete={"false"} />)}  
              </Card>
              </Grid>
