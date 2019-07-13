@@ -5,6 +5,7 @@ import Button from '@material-ui/core/Button';
 import { connect } from 'react-redux'
 import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
+import Card from '@material-ui/core/Card'
 
 
 
@@ -85,7 +86,7 @@ class CurrentDayItem extends Component {
 
     render() {
         return (
-
+                
             <Grid item xs={12}>
 
                 <h4>{this.props.singleDay.day.substring(5, 7) + "/" + this.props.singleDay.day.substring(8, 10) + "/" + this.props.singleDay.day.substring(0, 4)}</h4>
@@ -161,7 +162,7 @@ class CurrentDayItem extends Component {
 
             </Grid>
 
-
+         
 
         )
     }

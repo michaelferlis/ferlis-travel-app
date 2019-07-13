@@ -87,3 +87,14 @@ input {
 .login{
   color: white;
 }
+
+input.Mui-disabled {
+  color: white;
+}
+
+input.Mui-inputLabel {
+  color: white;
+}
+
+
+

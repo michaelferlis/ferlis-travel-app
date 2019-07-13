@@ -23,15 +23,20 @@ const styles = {
     
     button: {margin: 20,width: 150, color: 'white' },
     card: {
-        width: '100%',
+        cushion: '30px',
         margin: '20px auto',
         background: 'transparent',
         color: 'white',
         label: 'white',
-        labelWidth: '200px',
+        
+        height: '50%',
     },
     table: {
         color: 'white',
+    },
+
+    InputLabelProps: {
+        color: 'red'
     }
 }
 
@@ -97,6 +102,50 @@ class NewTrip extends Component {
         });
     }
 
+    dayOne=()=>{
+        this.setState({
+            newDay: {
+                date: '7/18/2019',
+                city: 'Minneapolis',
+                travel: 'MSP>ORD DL 123',
+                hotel: 'Marriott',
+                reservations: 'Gibsons @ 8:30pm',
+                dayComments: 'be at airport by 4:30pm',
+            },
+        });
+console.log('one');
+
+    }
+
+    dayTwo=()=>{
+        this.setState({
+            newDay: {
+                date: '7/19/2019',
+                city: 'Chicago',
+                travel: 'None',
+                hotel: 'Marriott',
+                reservations: 'TBD',
+                dayComments: 'Find a cool spot for dinner',
+            },
+        });
+        console.log('two');
+        
+    }
+    dayThree=()=>{
+        this.setState({
+            newDay: {
+                date: '7/20/2019',
+                city: 'Chicago',
+                travel: 'ORD>MSP DL 124',
+                hotel: 'None',
+                reservations: 'None',
+                dayComments: 'Taking the CTA to airport',
+            },
+        });
+        console.log('two');
+        
+    }
+
     getCurrentDate = () => {
         let today = new Date();
         let dd = String(today.getDate()).padStart(2, '0');
@@ -125,19 +174,20 @@ class NewTrip extends Component {
                 <h2 style={{color: 'white'}}>Where to?</h2>
                 <h2>{this.state.newTrip.name}</h2>
 
-                <TextField style={styles.text} label="Trip Name" type='text' value={this.state.newTrip.name} onChange={this.handleTripChangeFor('name')} />
+                <TextField InputLabelProps={{style: {color: 'white'} }} label="Trip Name" type='text' value={this.state.newTrip.name} onChange={this.handleTripChangeFor('name')} />
                 
                 {/* <pre>{JSON.stringify(this.props.reduxState.tripReducers)}</pre>
                 <pre>{JSON.stringify(this.props.reduxState.tripReducers.dayList)}</pre> */}
                 <h3 style={{color: 'white'}}>Add New Day to Trip</h3>
+                <button onClick={this.dayOne}>day 1</button> <button onClick={this.dayTwo}>day 2</button><button onClick={this.dayThree}>day 3</button>
                 <Card style={styles.card}>
                     
                         <TextField id="date"type="date" defaultValue={this.state.date}onChange={this.handleDayChangeFor('date')}/>
-                        <TextField style={styles.text} label="City" type='text' value={this.state.newDay.city} onChange={this.handleDayChangeFor('city')} />
-                        <TextField style={styles.text} label="Travel Itnerary" type='text' value={this.state.newDay.travel} onChange={this.handleDayChangeFor('travel')} />
-                        <TextField style={styles.text} label="Hotel" type='text' value={this.state.newDay.hotel} onChange={this.handleDayChangeFor('hotel')} />
-                        <TextField style={styles.text} label="Restaurant Reservations" type='text' value={this.state.newDay.reservations} onChange={this.handleDayChangeFor('reservations')} />
-                        <TextField style={styles.text} label="Daily Comments" type='text' value={this.state.newDay.dayComments} onChange={this.handleDayChangeFor('dayComments')} />
+                        <TextField label="City" InputLabelProps={{style: {color: 'white'} }} type='text' value={this.state.newDay.city} onChange={this.handleDayChangeFor('city')} />
+                        <TextField label="Travel Itnerary" InputLabelProps={{style: {color: 'white'} }} type='text' value={this.state.newDay.travel} onChange={this.handleDayChangeFor('travel')} />
+                        <TextField label="Hotel" InputLabelProps={{style: {color: 'white'} }} type='text' value={this.state.newDay.hotel} onChange={this.handleDayChangeFor('hotel')} />
+                        <TextField label="Reservations" InputLabelProps={{style: {color: 'white'} }} type='text' value={this.state.newDay.reservations} onChange={this.handleDayChangeFor('reservations')} />
+                        <TextField label="Daily Comments" InputLabelProps={{style: {color: 'white'} }} type='text' value={this.state.newDay.dayComments} onChange={this.handleDayChangeFor('dayComments')} />
                         <Button style={{color: 'white'}} size="medium" type='submit' variant="outlined" onClick={this.addNewDay}>Add New Day</Button>
                         
 
