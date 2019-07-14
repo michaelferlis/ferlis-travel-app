@@ -7,50 +7,49 @@ import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
 
 
-const styles = {text: {margin: 10 },button: {margin: 20,width: 150, },
+const styles = {
+    text: { margin: 10 }, button: { margin: 20, width: 150, },
     card: {
         width: '100%',
         height: '20%',
         margin: '20px auto',
         background: 'transparent',
-        labelColor: 'white',
-        
+
+
     },
-    floatingLabelFocusStyle: {
-        color: "white"
-    },
-    input: {color: 'white'}
 }
 
 
 class Pins extends Component {
     state = {
-       
+
         pins: {
             pin_lat: '',
             pin_long: '',
             location: '',
-           
+
         }
-        
-       
+
+
     }
-    componentDidMount () {
-        
-      } 
-     
+    componentDidMount() {
+
+    }
+
     addNewPin = event => {
         event.preventDefault();
-        this.props.dispatch({ type: 'ADD_PIN', 
-        payload:  {...this.state.pins, user_id: this.props.reduxState.user.id} })
-         
-        
+        this.props.dispatch({
+            type: 'ADD_PIN',
+            payload: { ...this.state.pins, user_id: this.props.reduxState.user.id }
+        })
+
+
         this.setState({
             pins: {
                 pin_lat: '',
                 pin_long: '',
                 location: '',
-               
+
             }
         });
         this.props.history.push(`/home`)
@@ -70,29 +69,29 @@ class Pins extends Component {
     render() {
         return (
             <div>
-                
-                <h4 style={{color: 'white'}}>Where have you been?</h4>
-             
 
-                
-                
-                
+                <h4 style={{ color: 'white' }}>Where have you been?</h4>
+
+
+
+
+
                 <Card style={styles.card}>
-                    
-                      
-                        <TextField style={styles.text} label="Latitude" type='text' value={this.state.pins.pin_lat} onChange={this.handlePinChangeFor('pin_lat')} />
-                        <TextField  style={styles.text}label="Longitude" type='text' value={this.state.pins.pin_long} onChange={this.handlePinChangeFor('pin_long')} />
-                        <TextField  style={styles.text}label="Location" type='text' value={this.state.pins.location} onChange={this.handlePinChangeFor('location')} />
-                        <Button type='submit'style={{color: 'white'}} variant="outlined"  onClick={this.addNewPin}>Log Trip</Button>
-                        
 
-                    
+
+                    <TextField InputLabelProps={{ style: { color: 'white' } }} label="Latitude" type='text' value={this.state.pins.pin_lat} onChange={this.handlePinChangeFor('pin_lat')} />
+                    <TextField InputLabelProps={{ style: { color: 'white' } }} label="Longitude" type='text' value={this.state.pins.pin_long} onChange={this.handlePinChangeFor('pin_long')} />
+                    <TextField InputLabelProps={{ style: { color: 'white' } }} label="Location" type='text' value={this.state.pins.location} onChange={this.handlePinChangeFor('location')} />
+                    <Button type='submit' style={{ color: 'white' }} variant="outlined" onClick={this.addNewPin}>Log Trip</Button>
+
+
+
                 </Card>
-                
 
-                
-                
-               
+
+
+
+
             </div>
         );
     }

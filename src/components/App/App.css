@@ -4,7 +4,7 @@ body {
     margin: 10px;
     padding: -9px;  
     min-height: 100vh;
- 
+    color: white !important;
   background-color: #241F1F;
   /* background-position-y: -30%; */
   background-image: url("map-xl.jpg"); 
@@ -12,6 +12,7 @@ body {
   background-repeat: no-repeat;
 background-size: 100%, 100% ;
 height: 100%;
+
   /* background-repeat: auto; */
     /* background-size: auto;
     background-color: #435993; */
@@ -92,9 +93,22 @@ input.Mui-disabled {
   color: white;
 }
 
-input.Mui-inputLabel {
+input.Mui-input {
+  color: white;
+}
+input.Root{
+  color: whitel
+}
+
+input.Mui {
   color: white;
 }
 
+input.inputMultiline {
+  color: white;
+  
+}
 
-
+input.MuiInputBase-input {
+  color: white;
+}

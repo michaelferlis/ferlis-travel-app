@@ -48,7 +48,7 @@ class Map extends Component{
                             //  onClick={() => { this.setSelectedPin(pin) }}
                          />
                      ))}
-                     <pre>{JSON.stringify(this.props.reduxState.tripReducers.pinList)}</pre> 
+                     
                 </GoogleMap>
 
         )

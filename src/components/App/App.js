@@ -23,6 +23,9 @@ import PastTrip from '../PastTrip/PastTrip';
 import GMaps from '../GMaps/GMaps'
 import Pins from '../Pins/Pins'
 
+import { createMuiTheme } from '@material-ui/core/styles';
+import purple from '@material-ui/core/colors/purple';
+
 
 
 import './App.css';
