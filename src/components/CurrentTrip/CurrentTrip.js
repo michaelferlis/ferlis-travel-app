@@ -73,7 +73,7 @@ class CurrentTrip extends Component {
     return (
       
       <div>
-        <h3 style={{color: "white"}}>{this.props.location.state && this.props.location.state.trip_name}</h3>
+        {/* <h3 style={{color: "white"}}>{this.props.location.state && this.props.location.state.trip_name}</h3> */}
       
         <TextField style={{
         }}
@@ -92,7 +92,7 @@ class CurrentTrip extends Component {
         <h4 style={{color: 'white'}}>Trip Comments</h4>
       <Grid container>
         <Grid item xs={12}>
-        <Paper style={{background: 'transparent'}}>
+        <Paper style={{background: 'white'}}>
         <TextField
           onChange={this.handleChange}
           id="trip_comments"
@@ -108,16 +108,21 @@ class CurrentTrip extends Component {
         </Grid>
         </Grid>
         <Grid item xs={9} className="grid-item-text-center">
+          <br/>
+          <br/>
+          
                             {this.state.editMode ?
                                 <Button size="small" onClick={this.updateTrip} variant="contained" color="white">Save Changes</Button>
                                 :
                                 <Button size="small" onClick={() => { this.setState({ ...this.state, editMode: true }) }} variant="contained" color="primary">Edit Trip</Button>
                             }
                             </Grid>
-                            
-                         <Button size="small" onClick={this.markComplete}variant="contained" color="white">
+                            <br/>
+                         <Button size="small" style={{float: 'right'}} onClick={this.markComplete}variant="contained" color="white">
                             Trip Complete
                          </Button> 
+                         <br/>
+                         <br/>
                          <Button size="small" onClick={this.addDay}variant="contained" color="white">
                              Add Day
                          </Button> 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 
-class PastTrip extends Component {
+class CityGuides extends Component {
 
   componentDidMount() {
     
@@ -13,10 +13,11 @@ class PastTrip extends Component {
   render() {
     return (
       <div>
+        <h1>City Guides</h1>
           <button onClick={this.getDashboard}>Dashboard</button>
       </div>
     );
   }
 }
 
-export default PastTrip;
+export default CityGuides;

@@ -21,8 +21,11 @@ const Nav = (props) => (
       {/* Show the link to the info page and the logout button if the user is logged in */}
       {props.user.id && (
         <>
-        <Link className="nav-link" to="/pins">
+        {/* <Link className="nav-link" to="/pins">
            Log Trip Locations
+          </Link> */}
+          <Link className="nav-link" to="/cityguides">
+           City Guides
           </Link>
           <Link className="nav-link" to="/new">
             Plan New Trip!

@@ -19,7 +19,7 @@ import Dashboard from '../Dashboard/Dashboard';
 import NewTrip from '../NewTrip/NewTrip';
 import CurrentTrip from '../CurrentTrip/CurrentTrip';
 import CurrentDay from '../CurrentDay/CurrentDay';
-import PastTrip from '../PastTrip/PastTrip';
+import CityGuides from '../CityGuides/CityGuides';
 import GMaps from '../GMaps/GMaps'
 import Pins from '../Pins/Pins'
 
@@ -96,8 +96,8 @@ class App extends Component {
             />
             <ProtectedRoute
               exact
-              path="/past"
-              component={PastTrip}
+              path="/cityguides"
+              component={CityGuides}
             />
             {/* If none of the other routes matched, we will show a 404. */}
             <Route render={() => <h1>404</h1>} />

@@ -218,7 +218,7 @@ console.log('one');
                 <TextField InputLabelProps={{style: {color: 'white'} }} label="Trip Comments" type='text' value={this.state.newTrip.tripComments} onChange={this.handleTripChangeFor('tripComments')} />
                 
                 <p>{this.state.newTrip.tripComments}</p>
-                <Button style={{color: 'white'}} size="medium" type='submit' variant="outlined" color="white" onClick={this.addTrip}>Save Trip</Button>
+                <Button style={{float: 'right'}} size="medium" type='submit' variant="outlined" color="white" onClick={this.addTrip}>Save Trip</Button>
             </div>
         );
     }

@@ -18,8 +18,9 @@ const styles = {text: {size: '8px' },
         
     },
     paper: {
-        background: 'transparent',
-        color: 'white',
+        background: 'white',
+        color: 'black',
+        width: '30vw'
     }
 }
 
