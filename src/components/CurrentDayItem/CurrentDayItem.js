@@ -11,11 +11,12 @@ import Card from '@material-ui/core/Card'
 
 const styles = {label: {color: 'white' },
     comments: {
-        width: '1000px',
+        // width: '40vw',
         margin: '5px',
         padding: '5px',
 
     }
+
 }
 
 
@@ -87,7 +88,7 @@ class CurrentDayItem extends Component {
     render() {
         return (
                 
-            <Grid item xs={12}>
+            <Grid item xs={6}>
 
                 <h4>{this.props.singleDay.day.substring(5, 7) + "/" + this.props.singleDay.day.substring(8, 10) + "/" + this.props.singleDay.day.substring(0, 4)}</h4>
                 <TextField
@@ -95,7 +96,7 @@ class CurrentDayItem extends Component {
                     onChange={this.handleChange}
                     id="day"
                     disabled={!this.state.editMode}
-                    width="30%"
+                    // width="30%"
                     // label={this.state.day}
 
                     margin="normal"

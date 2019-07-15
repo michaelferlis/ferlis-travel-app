@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 
 class CityGuides extends Component {
@@ -20,4 +21,8 @@ class CityGuides extends Component {
   }
 }
 
-export default CityGuides;
+const mapStateToProps = reduxState => ({
+  reduxState
+});
+
+export default connect(mapStateToProps)(CityGuides);

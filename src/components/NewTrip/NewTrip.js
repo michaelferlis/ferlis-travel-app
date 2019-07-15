@@ -18,20 +18,19 @@ import Grid from '@material-ui/core/Grid'
 
 const styles = {
     text: {
-        margin: 20,
+        margin: '20px',
         color: 'white',
-        labelWidth: '200px',
+        inputWidth: '2000px',
     },
     
     button: {margin: 20,width: 150, color: 'white' },
     card: {
         // cushion: '30px',
-        // margin: '20px auto',
+        margin: '50px',
         background: 'transparent',
         color: 'white',
         label: 'white',
-        
-        height: '35vh',
+        height: '60vh',
     },
     table: {
         color: 'white',
@@ -172,8 +171,9 @@ console.log('one');
     render() {
         return (
             <div>
+                <br/>
                 
-                <h2 style={{color: 'white'}}>Where to?</h2>
+                {/* <h2 style={{color: 'white'}}>Where to?</h2> */}
                 <h2>{this.state.newTrip.name}</h2>
                 
 
@@ -181,21 +181,24 @@ console.log('one');
                 
                 {/* <pre>{JSON.stringify(this.props.reduxState.tripReducers)}</pre>
                 <pre>{JSON.stringify(this.props.reduxState.tripReducers.dayList)}</pre> */}
-                <h3 style={{color: 'white'}}>Add New Day to Trip</h3>
-                <button onClick={this.dayOne}>day 1</button> <button onClick={this.dayTwo}>day 2</button><button onClick={this.dayThree}>day 3</button>
+                {/* <h3 style={{color: 'white'}}>Add New Day to Trip</h3> */}
+                <br/>
+                <button style={{float: 'right', backgroundColor: 'transparent'}} onClick={this.dayOne}>day 1</button> <button style={{float: 'right', backgroundColor: 'transparent'}} onClick={this.dayTwo}>day 2</button><button style={{float: 'right', backgroundColor: 'transparent'}} onClick={this.dayThree}>day 3</button>
                 <Paper style={styles.card}>
-                    <Grid container >
-                        <Grid item xs={12}>
-                        <TextField id="date"type="date" defaultValue={this.state.date}onChange={this.handleDayChangeFor('date')}/>
-                        <TextField label="City" InputLabelProps={{style: {color: 'white'} }} type='text' value={this.state.newDay.city} onChange={this.handleDayChangeFor('city')} />
-                        <TextField label="Travel Itnerary" InputLabelProps={{style: {color: 'white'} }} type='text' value={this.state.newDay.travel} onChange={this.handleDayChangeFor('travel')} />
-                        <TextField label="Hotel" InputLabelProps={{style: {color: 'white'} }} type='text' value={this.state.newDay.hotel} onChange={this.handleDayChangeFor('hotel')} />
-                        <TextField label="Reservations" InputLabelProps={{style: {color: 'white'} }} type='text' value={this.state.newDay.reservations} onChange={this.handleDayChangeFor('reservations')} />
-                        <TextField label="Daily Comments" InputLabelProps={{style: {color: 'white'} }} type='text' value={this.state.newDay.dayComments} onChange={this.handleDayChangeFor('dayComments')} />
-                        <Button style={{color: 'white'}} size="medium" type='submit' variant="outlined" onClick={this.addNewDay}>Add New Day</Button>
+                    <Grid container spacing={2}>
+                        <Grid item xs={6}>
+                        <TextField fullWidth id="date"type="date" defaultValue={this.state.date}onChange={this.handleDayChangeFor('date')}/>
+                        <TextField fullWidth label="City" InputLabelProps={{style: {color: 'white'} }} type='text' value={this.state.newDay.city} onChange={this.handleDayChangeFor('city')} />
+                        <TextField fullWidth label="Travel Itnerary" InputLabelProps={{style: {color: 'white'} }} type='text' value={this.state.newDay.travel} onChange={this.handleDayChangeFor('travel')} />
+                        <TextField fullWidth label="Hotel" InputLabelProps={{style: {color: 'white'} }} type='text' value={this.state.newDay.hotel} onChange={this.handleDayChangeFor('hotel')} />
+                        <TextField fullWidth label="Restaurant Reservations" InputLabelProps={{style: {color: 'white'} }} type='text' value={this.state.newDay.reservations} onChange={this.handleDayChangeFor('reservations')} />
+                        <TextField fullWidth label="Daily Comments" InputLabelProps={{style: {color: 'white'} }} type='text' value={this.state.newDay.dayComments} onChange={this.handleDayChangeFor('dayComments')} />
+                        
                         </Grid>
                         </Grid>
-                    
+                        <Button style={{float: 'right', color: 'white'}} size="medium" type='submit' variant="outlined" onClick={this.addNewDay}>Add New Day</Button>
+                        <br/>
+                        
                 </Paper>
                 <Table >
                     <TableHead>
@@ -214,11 +217,11 @@ console.log('one');
                         {this.props.reduxState.tripReducers.addDay.map(day => <DayItem history={this.props.history} key={day.id} day={day} />)}
                     </TableBody>
                 </Table>
-
+                <br/>
                 <TextField InputLabelProps={{style: {color: 'white'} }} label="Trip Comments" type='text' value={this.state.newTrip.tripComments} onChange={this.handleTripChangeFor('tripComments')} />
                 
-                <p>{this.state.newTrip.tripComments}</p>
-                <Button style={{float: 'right'}} size="medium" type='submit' variant="outlined" color="white" onClick={this.addTrip}>Save Trip</Button>
+                {/* <p>{this.state.newTrip.tripComments}</p> */}
+                <Button style={{float: 'right', color: 'white'}} size="medium" type='submit' variant="outlined" color="white" onClick={this.addTrip}>Save Trip</Button>
             </div>
         );
     }

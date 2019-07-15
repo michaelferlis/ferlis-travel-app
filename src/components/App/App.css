@@ -90,25 +90,33 @@ input {
 }
 
 input.Mui-disabled {
-  color: white;
-}
+  color: white !important;
+} 
 
 input.Mui-input {
   color: white;
 }
 input.Root{
-  color: whitel
+  color: white
 }
 
 input.Mui {
   color: white;
 }
 
-input.inputMultiline {
+input.inputMultiline-disabled {
   color: white;
   
 }
 
 input.MuiInputBase-input {
   color: white;
+}
+
+textarea.Mui-disabled {
+  color: white;
+}
+
+label.MuiInputLabel-root {
+  color: white !important;
 }

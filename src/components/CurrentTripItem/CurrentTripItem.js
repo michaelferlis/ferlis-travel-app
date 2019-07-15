@@ -6,21 +6,26 @@ import { connect } from 'react-redux'
 // import TextField from '@material-ui/core/TextField';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
+import { border } from '@material-ui/system';
 // import { makeStyles } from '@material-ui/core/styles';
 
 
 const styles = {text: {size: '8px' },
     card: {
-        width: '200px',
+        width: '50%',
         margin: '5px',
         padding: '5px',
+        background: 'transparent',
+       
        
         
     },
     paper: {
-        background: 'white',
-        color: 'black',
-        width: '30vw'
+        background: 'transparent',
+        color: 'white',
+        width: '50%',
+        border: '1px solid white',
+        padding: '5%'
     }
 }
 
