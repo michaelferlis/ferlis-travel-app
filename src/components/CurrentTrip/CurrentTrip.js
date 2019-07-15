@@ -145,7 +145,7 @@ class CurrentTrip extends Component {
                             {this.state.editMode ?
                                 <Button size="small" onClick={this.updateTrip} variant="contained" color="white">Save Changes</Button>
                                 :
-                                <Button size="small" onClick={() => { this.setState({ ...this.state, editMode: true }) }} variant="contained" color="primary">Edit Trip</Button>
+                                <Button size="small" onClick={() => { this.setState({ ...this.state, editMode: true }) }} variant="contained" color="white">Edit Trip</Button>
                             }
                             </Grid>
                             <br/>

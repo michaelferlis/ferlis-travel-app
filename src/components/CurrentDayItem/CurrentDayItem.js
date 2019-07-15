@@ -152,12 +152,12 @@ class CurrentDayItem extends Component {
                 />
                 <Grid >
                     {this.state.editMode ?
-                        <Button size="small" onClick={this.updateDay} variant="contained" color="primary">Save Changes</Button>
+                        <Button size="small" onClick={this.updateDay} variant="contained" >Save Changes</Button>
                         :
                         <Button size="small" onClick={() => { this.setState({ ...this.state, editMode: true }) }} variant="contained" color="primary">Edit Day</Button>
                     }
                 </Grid>
-                <Button size="small" onClick={this.handleClickDelete}>
+                <Button size="small" variant="contained" style={{float: 'right'}} onClick={this.handleClickDelete}>
                     Delete Day
                          </Button>
 

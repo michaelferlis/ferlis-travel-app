@@ -23,7 +23,7 @@ const styles = {
         inputWidth: '2000px',
     },
     
-    button: {margin: 20,width: 150, color: 'white' },
+    // button: {margin: 20,width: 150, color: 'white' },
     card: {
         // cushion: '30px',
         margin: '50px',
@@ -113,6 +113,10 @@ class NewTrip extends Component {
                 reservations: 'Gibsons @ 8:30pm',
                 dayComments: 'be at airport by 4:30pm',
             },
+            newTrip: {
+                name: 'Chicago (July 2019)',
+                tripComments: 'Taking a quick trip to Chicago for a few days to see friends and family. '
+            }
         });
 console.log('one');
 
@@ -196,7 +200,7 @@ console.log('one');
                         
                         </Grid>
                         </Grid>
-                        <Button style={{float: 'right', color: 'white'}} size="medium" type='submit' variant="outlined" onClick={this.addNewDay}>Add New Day</Button>
+                        <Button style={{float: 'right'}} size="medium" type='submit' variant="outlined" onClick={this.addNewDay}>Add New Day</Button>
                         <br/>
                         
                 </Paper>
@@ -218,7 +222,7 @@ console.log('one');
                     </TableBody>
                 </Table>
                 <br/>
-                <TextField InputLabelProps={{style: {color: 'white'} }} label="Trip Comments" type='text' value={this.state.newTrip.tripComments} onChange={this.handleTripChangeFor('tripComments')} />
+                <TextField InputLabelProps={{style: {color: 'white'} }} fullWidth label="Trip Comments" type='text' value={this.state.newTrip.tripComments} onChange={this.handleTripChangeFor('tripComments')} />
                 
                 {/* <p>{this.state.newTrip.tripComments}</p> */}
                 <Button style={{float: 'right', color: 'white'}} size="medium" type='submit' variant="outlined" color="white" onClick={this.addTrip}>Save Trip</Button>

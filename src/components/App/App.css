@@ -66,7 +66,7 @@ input {
 }
 
 .log-in:hover, .log-out:hover, .register:hover {
-  background-color: #000d83;
+  background-color: rgb(151, 147, 147);
 }
 
 /* This line makes the "Register" and "Login" buttons look like links */
@@ -117,6 +117,22 @@ textarea.Mui-disabled {
   color: white;
 }
 
+textarea.Mui {
+  color: white;
+}
+
+textarea.Mui-root {
+  color: white;
+}
+
 label.MuiInputLabel-root {
   color: white !important;
 }
+
+
+textarea.MuiInputBase-input {
+  color: white !important;
+}
+/* MuiInput-input 
+MuiInputBase-inputMultiline 
+MuiInput-inputMultiline */
