@@ -133,6 +133,11 @@ label.MuiInputLabel-root {
 textarea.MuiInputBase-input {
   color: white !important;
 }
+
+input{
+  border: 1px solid white;
+  bottom: 1px solid white;
+}
 /* MuiInput-input 
 MuiInputBase-inputMultiline 
 MuiInput-inputMultiline */

@@ -80,7 +80,7 @@ class CurrentDayItem extends Component {
             type: 'DELETE_DAY',
             payload: this.props.singleDay.id
         })
-        this.props.history.push(`/home`)
+        this.props.history.push(`/dashboard`)
     }
 
 
