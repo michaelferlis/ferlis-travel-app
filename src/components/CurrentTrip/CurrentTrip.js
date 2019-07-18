@@ -130,7 +130,7 @@ class CurrentTrip extends Component {
           disabled={!this.state.editMode}
           fullWidth
           multiline
-          rows='10'
+          rows='20'
           label="Trip Comments"
           value={this.state.trip_comments}
           margin="normal"

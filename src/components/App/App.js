@@ -22,6 +22,7 @@ import CurrentDay from '../CurrentDay/CurrentDay';
 import CityGuides from '../CityGuides/CityGuides';
 import GMaps from '../GMaps/GMaps'
 import Pins from '../Pins/Pins'
+import NewGuide from '../NewGuide/NewGuide'
 
 import { createMuiTheme } from '@material-ui/core/styles';
 import purple from '@material-ui/core/colors/purple';
@@ -83,6 +84,11 @@ class App extends Component {
               exact
               path="/new"
               component={NewTrip}
+            />
+             <ProtectedRoute
+              exact
+              path="/newguide"
+              component={NewGuide}
             />
             <ProtectedRoute
               exact
