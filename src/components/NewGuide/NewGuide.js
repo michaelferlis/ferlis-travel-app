@@ -19,19 +19,61 @@ import { TextField, Button } from '@material-ui/core';
 
 
 class NewGuide extends Component {
-   
+
+    state = {
+        guide: {
+            name: '',
+            information: '',
+        }
+    }
+
+    handleClick = () => {
+        console.log('click working');
+
+    }
+    handleChangeInformation = (propertyName) => event => {
+        this.setState({
+            guide: {
+                ...this.state.guide,
+                [propertyName]: event.target.value,
+            }
+        });
+    }
+
+    handleChangeName = (propertyName) => event => {
+        this.setState({
+
+            guide:{
+                ...this.state.guide,
+                [propertyName]: event.target.value,
+            }
+        })
+    }
+
 
     render() {
         return (
             <div>
-               <h1>new guide</h1>
-               <TextField label="City Name"></TextField>
-               <Button stlye={{float: 'right'}} onClick={this.handleClick}>Add Guide</Button>
-               <TextField
-                fullWidth 
-                multiline
-                rows='100'
-               label="Input Guide Information"></TextField>
+                <h1>new guide</h1>
+                <pre>{JSON.stringify(this.state)}</pre>
+                <TextField label="City Name"
+                type="text"
+                value={this.state.guide.name}
+                onChange={this.handleChangeName('name')}
+                
+                ></TextField>
+                <Button stlye={{ float: 'right' }} onClick={this.handleClick}>Add Guide</Button>
+                <TextField
+                    fullWidth
+                    multiline
+                    rows='100'
+                    label="Input Guide Information"
+                    type="text"
+                    value={this.state.guide.information}
+                    onChange={this.handleChangeInformation('information')}
+
+
+                ></TextField>
             </div>
         );
     }
