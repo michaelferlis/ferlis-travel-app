@@ -15,6 +15,8 @@ const TripNameRouter = require('./routes/trip.name.router');
 const TripDetailsRouter = require('./routes/trip.details.router');
 const TripDayDetailsRouter = require('./routes/trip.day.details.router');
 const pinsRouter = require('./routes/pins.router')
+const guideRouter = require('./routes/guide.router')
+const testRouter = require('./routes/test.router')
 // Body parser middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -33,6 +35,8 @@ app.use('/api/name', TripNameRouter);
 app.use('/api/details', TripDetailsRouter);
 app.use('/api/daydetails', TripDayDetailsRouter);
 app.use('/api/pins', pinsRouter)
+app.use('/api/guides', guideRouter)
+app.use('/api/test', testRouter)
 
 
 

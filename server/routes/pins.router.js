@@ -7,7 +7,7 @@ const router = express.Router();
 
 
 router.get('/', rejectUnauthenticated,(req, res) => {
-    const queryText = `SELECT * FROM "pins" WHERE "user_id"=1;`
+    const queryText = `SELECT * FROM "pins";`
     pool.query(queryText)
       .then((result) => { res.send(result.rows),console.log('test');; })
       

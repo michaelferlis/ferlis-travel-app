@@ -22,15 +22,40 @@ class NewGuide extends Component {
 
     state = {
         guide: {
-            name: '',
+            guide_name: '',
             information: '',
         }
     }
 
-    handleClick = () => {
-        console.log('click working');
+    // addGuide = (event) =>{
+    //     event.preventDefault();
+    //     this.props.dispatch({ type: 'ADD_GUIDE', payload: this.state.guide})
+    //     this.setState({
+    //         guide: {
+    //             name: '',
+    //             information: '',
+    //         }
+    //     });
+    // }
+    addGuide = event => {
+        event.preventDefault();
+        this.props.dispatch({
+            type: 'ADD_GUIDE',
+            payload: { ...this.state.guide, user_id: this.props.reduxState.user.id }
+        })
 
+
+        this.setState({
+            guide: {
+                guide_name: '',
+                information: '',
+                
+
+            }
+        });
+        this.props.history.push(`/home`)
     }
+  
     handleChangeInformation = (propertyName) => event => {
         this.setState({
             guide: {
@@ -58,11 +83,11 @@ class NewGuide extends Component {
                 <pre>{JSON.stringify(this.state)}</pre>
                 <TextField label="City Name"
                 type="text"
-                value={this.state.guide.name}
-                onChange={this.handleChangeName('name')}
+                value={this.state.guide.guide_name}
+                onChange={this.handleChangeName('guide_name')}
                 
                 ></TextField>
-                <Button stlye={{ float: 'right' }} onClick={this.handleClick}>Add Guide</Button>
+                <Button stlye={{ float: 'right' }} onClick={this.addGuide}>Add Guide</Button>
                 <TextField
                     fullWidth
                     multiline

@@ -73,6 +73,16 @@ import axios from 'axios'
     }
   }
 
+  function* addGuide(action) {
+    try{
+      yield axios.post('/api/guides', action.payload)
+    } catch (error) {
+      console.log('error with posting a guide', error);
+      
+    }
+
+  }
+
   function* addDay(action) {
     try {
       yield axios.post('/api/name', action.payload);
@@ -167,6 +177,7 @@ function* registrationSaga() {
     yield takeLatest('MARK_COMPLETE', markComplete);
     yield takeLatest('FETCH_PINS', fetchPins);
     yield takeLatest('ADD_PIN', addPin);
+    yield takeLatest('ADD_GUIDE', addGuide);
   }
   
   export default registrationSaga;
