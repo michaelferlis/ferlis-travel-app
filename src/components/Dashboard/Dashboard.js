@@ -78,9 +78,9 @@ class Dashboard extends Component {
         
          
         
-         {/* <pre>{JSON.stringify(this.props.reduxState.tripReducers.tripListAll)}</pre>
+         <pre>{JSON.stringify(this.props.reduxState.tripReducers.tripListAll)}</pre>
          <pre>{JSON.stringify(this.props.reduxState.tripReducers)}</pre>
-         <pre>{JSON.stringify(this.props.reduxState.tripReducers.tripNames)}</pre> */}
+         <pre>{JSON.stringify(this.props.reduxState.tripReducers.tripNames)}</pre>
          <Grid container spacing={2}>
            <Grid item xs={6}>
              <Card style={styles.card} >  

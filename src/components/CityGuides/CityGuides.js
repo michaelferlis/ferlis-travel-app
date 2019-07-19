@@ -9,6 +9,7 @@ import TableRow from '@material-ui/core/TableRow'
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
+import CityGuidesItem from '../CityGuidesItem/CityGuidesItem'
 
 
 import Paper from '@material-ui/core/Paper'
@@ -30,9 +31,10 @@ class CityGuides extends Component {
       <div>
         <h1>City Guides</h1>
         <pre>{JSON.stringify(this.props.reduxState.tripReducers.guideList)}</pre>
-      <TextField>
-        
-      </TextField>
+        <Card>
+        {this.props.reduxState.tripReducers.guideList.map(guideList => <CityGuidesItem history={this.props.history} key={guideList.guide_id} guideList={guideList}/>)}  
+        </Card>
+      
           <Button onClick={this.getDashboard}>Create New Guide</Button>
 
 
