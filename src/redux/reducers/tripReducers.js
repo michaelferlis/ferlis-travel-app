@@ -67,6 +67,15 @@ const pinList = (state = [], action) => {
     return state;
 }
 
+const guideList = (state = [], action) => {
+    if (action.type === 'SET_GUIDES'){
+        console.log(`The day was ${action.payload}`);
+        return action.payload;
+    } 
+
+    return state;
+}
+
 export default combineReducers({
     addDay,
     addTripName,
@@ -75,6 +84,7 @@ export default combineReducers({
     singleTrip,
     singleDay,
     pinList,
+    guideList,
   });
   
   

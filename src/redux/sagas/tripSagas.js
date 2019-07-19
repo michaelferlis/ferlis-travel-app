@@ -4,6 +4,17 @@ import { takeLatest, put } from 'redux-saga/effects'
 import axios from 'axios'
 
 
+function* fetchGuides (action) {
+  try {
+      const dayResponse = yield axios.get('/api/guides');
+      yield put({type: 'SET_GUIDES', payload: dayResponse.data})
+      console.log(dayResponse.data);
+      
+  } catch(error){
+      console.log('error fetching guides', error);
+  }
+  
+}
 
   function* fetchTrips (action) {
     try {
@@ -12,7 +23,7 @@ import axios from 'axios'
         console.log(dayResponse.data);
         
     } catch(error){
-        console.log('error fetching plants', error);
+        console.log('error fetching days', error);
     }
     
   }
@@ -178,6 +189,7 @@ function* registrationSaga() {
     yield takeLatest('FETCH_PINS', fetchPins);
     yield takeLatest('ADD_PIN', addPin);
     yield takeLatest('ADD_GUIDE', addGuide);
+    yield takeLatest('FETCH_GUIDES', fetchGuides);
   }
   
   export default registrationSaga;

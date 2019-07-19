@@ -18,6 +18,7 @@ import Grid from '@material-ui/core/Grid'
 class CityGuides extends Component {
 
   componentDidMount() {
+    this.props.dispatch({type: 'FETCH_GUIDES'})
     
   }
   getDashboard=()=> {
@@ -28,7 +29,7 @@ class CityGuides extends Component {
     return (
       <div>
         <h1>City Guides</h1>
-
+        <pre>{JSON.stringify(this.props.reduxState.tripReducers.guideList)}</pre>
       <TextField>
         
       </TextField>
