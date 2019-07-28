@@ -128,6 +128,17 @@ function* fetchGuides (action) {
     
   }
 
+  function* fetchSingleGuide (action) {
+    try {
+      const guideResponse = yield axios.get(`/api/city/${action.payload}`);
+      console.log('guide response',guideResponse.data)
+      yield put({type: 'FETCH_GUIDES', payload: guideResponse.data})
+      
+  } catch(error){
+      console.log('error deleting day', error);
+  }
+  }
+
   function* updateDay (action) {
     try {
         const tripResponse = yield axios.put(`/api/newtrip/${action.payload.id}`, action.payload);
@@ -190,6 +201,7 @@ function* registrationSaga() {
     yield takeLatest('ADD_PIN', addPin);
     yield takeLatest('ADD_GUIDE', addGuide);
     yield takeLatest('FETCH_GUIDES', fetchGuides);
+    yield takeLatest('FETCH_GUIDE_DETAILS', fetchSingleGuide);
   }
   
   export default registrationSaga;
