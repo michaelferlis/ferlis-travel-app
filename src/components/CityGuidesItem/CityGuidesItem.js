@@ -9,13 +9,15 @@ import { TextField } from '@material-ui/core';
 
 class CityGuidesItem extends Component {
 
-    
+    getGuide=()=> {
+        this.props.history.push(`/city`)
+      }
 
     render() {
         return (
             <>
                 
-                    <p >{this.props.guideList.guide_name}</p>
+                    <Button onClick={this.getGuide}>{this.props.guideList.guide_name}</Button>
                     {/* <p >{this.props.guideList.information}</p> */}
                     
                    

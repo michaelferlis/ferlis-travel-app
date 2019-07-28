@@ -30,13 +30,16 @@ const Nav = (props) => (
           <Link className="nav-link" to="/new">
             Plan New Trip!
           </Link>
+          <Link className="nav-link" to="/home">
+        Map
+      </Link>
           <LogOutButton className="nav-link"/>
         </>
       )}
       {/* Always show this link since the about page is not protected */}
-      <Link className="nav-link" to="/home">
+      {/* <Link className="nav-link" to="/home">
         Map
-      </Link>
+      </Link> */}
     </div>
   </div>
 );

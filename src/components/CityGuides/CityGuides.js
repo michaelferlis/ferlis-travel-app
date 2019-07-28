@@ -26,14 +26,19 @@ class CityGuides extends Component {
     this.props.history.push(`/newguide`)
   }
 
+  getGuide=()=> {
+    this.props.history.push(`/city`)
+  }
+
   render() {
     return (
       <div>
         <h1>City Guides</h1>
+        
         <pre>{JSON.stringify(this.props.reduxState.tripReducers.guideList)}</pre>
-        <Card>
+       
         {this.props.reduxState.tripReducers.guideList.map(guideList => <CityGuidesItem history={this.props.history} key={guideList.guide_id} guideList={guideList}/>)}  
-        </Card>
+        
       
           <Button onClick={this.getDashboard}>Create New Guide</Button>
 
