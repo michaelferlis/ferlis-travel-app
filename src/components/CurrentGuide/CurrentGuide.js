@@ -46,7 +46,7 @@ class CurrentGuide extends Component {
       <div>
         
         
-          {this.props.reduxState.tripReducers.singleTrip.map(singleTrip => <CurrentTripItem history={this.props.history} key={singleTrip.id} singleTrip={singleTrip} />)}
+          <h1>tesf</h1>
       
                          </div>
     );

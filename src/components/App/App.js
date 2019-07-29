@@ -23,7 +23,7 @@ import CityGuides from '../CityGuides/CityGuides';
 import GMaps from '../GMaps/GMaps'
 import Pins from '../Pins/Pins'
 import NewGuide from '../NewGuide/NewGuide'
-
+import CurrentGuide from '../CurrentGuide/CurrentGuide'
 import { createMuiTheme } from '@material-ui/core/styles';
 import purple from '@material-ui/core/colors/purple';
 
@@ -106,7 +106,13 @@ class App extends Component {
               component={CityGuides}
             />
 
-            
+<ProtectedRoute
+              exact
+              path="/city"
+              component={CurrentGuide}
+            />
+
+
             {/* If none of the other routes matched, we will show a 404. */}
             <Route render={() => <h1>404</h1>} />
           </Switch>

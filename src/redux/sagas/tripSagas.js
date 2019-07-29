@@ -132,7 +132,7 @@ function* fetchGuides (action) {
     try {
       const guideResponse = yield axios.get(`/api/city/${action.payload}`);
       console.log('guide response',guideResponse.data)
-      yield put({type: 'FETCH_GUIDES', payload: guideResponse.data})
+      yield put({type: 'SET_SINGLE_GUIDE', payload: guideResponse.data})
       
   } catch(error){
       console.log('error deleting day', error);
