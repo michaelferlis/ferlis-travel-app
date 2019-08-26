@@ -50,7 +50,7 @@ const tripListAll = (state = [], action) => {
 }
 
 const guideDetails = (state = [], action) => {
-    if (action.type === 'SET_GUIDE'){
+    if (action.type === 'SET_SINGLE_GUIDE'){
         console.log(`The trip was ${action.payload}`);
         return action.payload;
     } 

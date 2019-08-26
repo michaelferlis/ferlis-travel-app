@@ -5,7 +5,7 @@ In addition, Fly Away acts as a trip journal that users can refer back to rememb
 
 
 
-## Setup Instructions
+# Setup Instructions
 
 Fly Away uses React, Redux, Express, Passport, and PostgreSQL (a full list of dependencies can be found in `package.json`).
 

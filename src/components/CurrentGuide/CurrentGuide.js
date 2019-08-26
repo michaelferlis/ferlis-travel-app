@@ -46,7 +46,7 @@ class CurrentGuide extends Component {
       <div>
         
         
-          <h1>tesf</h1>
+        <pre>{JSON.stringify(this.props.reduxState.tripReducers.guideDetails)}</pre>
       
                          </div>
     );

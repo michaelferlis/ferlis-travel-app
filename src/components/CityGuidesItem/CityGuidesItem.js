@@ -18,6 +18,7 @@ class CityGuidesItem extends Component {
     render() {
         return (
             <>
+            <pre>{JSON.stringify(this.props.reduxState)}</pre>
             <Card>
                  <pre>{JSON.stringify(this.props.reduxState)}</pre>
                     <Button onClick={this.getGuide}>{this.props.guideList.guide_name}</Button>
