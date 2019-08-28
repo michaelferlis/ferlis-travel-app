@@ -29,7 +29,7 @@ class TripItem extends Component {
 
 
     componentDidMount() {
-        // console.log(this.props.tripNames.id);
+        console.log(this.props.tripNames.id);
 
     }
 
