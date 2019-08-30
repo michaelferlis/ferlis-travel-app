@@ -27,12 +27,6 @@ class TripItem extends Component {
         })
     }
 
-
-    componentDidMount() {
-        console.log(this.props.tripNames.id);
-
-    }
-
     
 
 
